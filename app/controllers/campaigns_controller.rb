@@ -7,7 +7,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
-      # redirect_to dashboard_path(@campaign)
+    redirect_to dashboard_path
     else
       render :new
     end
@@ -17,7 +17,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     @campaign.user = current_user
     @campaign.update(campaign_params)
-    # redirect_to dashboard_path(@campaign)
+    redirect_to dashboard_path
   end
 
   private

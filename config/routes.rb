@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   get "dashboard", to: "pages#dashboard"
 
+  resources :products, only: %i[create new update]
+  resources :campaigns, only: %i[create new update]
 
 end

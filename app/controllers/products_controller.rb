@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
-      # redirect_to dashboard_path(@product)
+     redirect_to dashboard_path
     else
       render :new
     end
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.user = current_user
     @product.update(product_params)
-    # redirect_to product_path(@product)
+    redirect_to dashboard_path
   end
 
   private
