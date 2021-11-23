@@ -1,0 +1,13 @@
+<%= @user.name %>
+<div class="card" style="width: 18rem;">
+  <% @campaigns.each do |campaign| %>
+    <%= campaign.name %>
+  <% end %>
+  <% @products.each do |product| %>
+    <%= product.price %>
+    <%= product.garment %>
+    <%= product.color %>
+  <% end %>
+</div>
+
+<!--cl_image_tag product.photo.key-->

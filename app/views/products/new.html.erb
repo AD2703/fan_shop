@@ -1,0 +1,23 @@
+<div class="form" class="sr-only">
+<h2>Add a product</h2>
+<br>
+<%= simple_form_for(@product) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <br>
+<p>Select the type of garment</p>
+
+  <%= f.select :garment, collection: ["T-shirt", "hoodie", "long-sleeve"] %>
+  <br>
+  <p>Select the color of your product</p>
+  <br>
+  <%= f.select :color,  collection: ["white", "grey", "black", "green", "beige", "pink"] %>
+  <br>
+  <br>
+  <p>Upload the picture you want to see on the Garment</p>
+  <%= f.input :photo, as: :file %>
+  <%# <%= f.input :publish, as: :boolean, checked_value: true, unchecked_value: false %>
+  <br>
+  <%= f.submit "Save", class: "btn btn-primary float-right"%>
+<% end %>
+</div>
