@@ -1,0 +1,12 @@
+<div class="form">
+<h2>Update a Campaign</h2>
+<br>
+<%= simple_form_for(@campaign) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :duration_days %>
+  <br>
+  <%= f.input :active, as: :boolean, checked_value: true, unchecked_value: false %>
+  <br>
+  <%= f.submit "Save", class: "btn btn-primary float-right"%>
+<% end %>
+</div>
