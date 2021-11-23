@@ -4,7 +4,7 @@ $color-bg: #EBECF0;
 $color-shadow: #BABECC;
 $color-white: #FFF;
 
-//.container {
+// .container {
 //   height: 200px;
 // }
 // .container h2 {
@@ -19,5 +19,11 @@ $color-white: #FFF;
 // }
 
 // input{
-
+//   margin-right: $ruler/2;
+//   box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+//   width: 100%;
+//   box-sizing: border-box;
+//   transition: all 0.2s ease-in-out;
+//   appearance: none;
+//   -webkit-appearance: none;
 // }

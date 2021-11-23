@@ -57,3 +57,5 @@ product9.photo.attach(io: File.open(photo9), filename: 'nes.png', content_type: 
 product10 = Product.create(user: user2, name:'long-sleeve2', price: 23, garment: 'long-sleeve', color:'grey', publish: true)
 photo10 = URI.open('https://everpress.imgix.net/img/campaign/original/61803819ab95c6.87146106.png')
 product10.photo.attach(io: File.open(photo10), filename: 'nes.png', content_type: 'image/png')
+
+campaignproduct1 = CampaignProduct.create( campaign: campaign1, product: product1, size: 'small')
