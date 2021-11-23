@@ -1,0 +1,15 @@
+<div class="form">
+<h2>Add a product</h2>
+<br>
+<%= simple_form_for(@product) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <br>
+  <%= f.select :garment, options_for_select(["T-shirt", "hoodie", "long-sleeve"]) %>
+  <%= f.select :color, options_for_select(["white", "grey", "black", "green", "beige", "pink"]) %>
+
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <br>
+  <%= f.submit "Save", class: "btn btn-primary float-right"%>
+<% end %>
+</div>
