@@ -1,2 +1,3 @@
 class CampaignProductsController < ApplicationController
+
 end
