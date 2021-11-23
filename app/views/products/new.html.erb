@@ -7,7 +7,8 @@
   <br>
   <%= f.select :garment, options_for_select(["T-shirt", "hoodie", "long-sleeve"]) %>
   <%= f.select :color, options_for_select(["white", "grey", "black", "green", "beige", "pink"]) %>
-   <%= f.input :photo, as: :file %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :publish, as: :boolean, checked_value: true, unchecked_value: false %>
   <br>
   <%= f.submit "Save", class: "btn btn-primary float-right"%>
 <% end %>
