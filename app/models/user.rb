@@ -12,7 +12,6 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :seller, presence: true
   validates :nickname, presence: true, uniqueness: true
-  validates :description, presence: true
   validates :address, presence: true
   validates :email, format: { with: /\A.*@.*\.com\z/ }
 end
