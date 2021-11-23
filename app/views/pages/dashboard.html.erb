@@ -1,30 +1,10 @@
-<h1>Hello, <%= @user.name %></h1>
-<div class="myhouses">
-  <div class='dashboard-box'>
-    <div class="cards">
-        <% @products.each do |product| %>
-        <div class='my-house-card'>
-          <div class='my-house-img'>
-                <%= cl_image_tag product.photo.key , alt: "Poster"%>
-          </div>
-          <div class='my-house-info'>
-            <div class='house-top'>
-              <div class='house-detail'>
-                <h1 class='house-name'><%=  product.name %></h1>
-              </div>
-            <div class='house-bottom'>
-              <button type="button" class="btn-myhouse">
-                <%= link_to 'See more', dashboard_path, :class => "button"%>
-              </button>
-              <div class='house-earning'>
-                <h1>
-                  <%= product.price %> €
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+<h1><%= @user.name %></h1>
+<p>Edit profile</p>
+<h1><%= @products.count %></h1>
+<p>N. Products</p>
+<h1><%= @campaigns.count %></h1>
+<p>N. Campaigns</p>
+<h1>1000</h1>
+<p>Sales this month</p>
+<% @products.each do |product| %>
+<% end %>
