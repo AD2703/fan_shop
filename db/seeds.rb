@@ -58,6 +58,7 @@ product10 = Product.create(user: user2, name:'long-sleeve2', price: 23, garment:
 photo10 = URI.open('https://everpress.imgix.net/img/campaign/original/61803819ab95c6.87146106.png')
 product10.photo.attach(io: File.open(photo10), filename: 'nes.png', content_type: 'image/png')
 
+
 campaignproduct1 = CampaignProduct.create(product: product1, campaign: campaign1)
 campaignproduct2 = CampaignProduct.create(product: product2, campaign: campaign1)
 campaignproduct3 = CampaignProduct.create(product: product3, campaign: campaign1)
@@ -68,3 +69,4 @@ campaignproduct7 = CampaignProduct.create(product: product7, campaign: campaign3
 campaignproduct8 = CampaignProduct.create(product: product8, campaign: campaign4)
 campaignproduct9 = CampaignProduct.create(product: product9, campaign: campaign4)
 campaignproduct10 = CampaignProduct.create(product: product10, campaign: campaign4)
+
