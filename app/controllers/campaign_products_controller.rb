@@ -13,5 +13,17 @@ class CampaignProductsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def show
+    @campaign_product = CampaignProduct.find(params[:id])
+    @products = Product.find(params[:product_id])
+    @campaign_product.products = @products
+  end
 
+  def index
+    if params[:campaign_id].present?
+      @campaign_products = CampaignProduct.where(campaign_id: params[:campaign_id])
+    else
+      @campaign_products = CampaignProduct.all
+    end
+  end
 end
