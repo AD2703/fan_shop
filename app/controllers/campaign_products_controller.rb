@@ -1,6 +1,4 @@
 class CampaignProductsController < ApplicationController
-
-
   def create
     @product = Product.find(params[:campaign_product][:product_id])
     @campaign_product = CampaignProduct.new
@@ -18,7 +16,7 @@ class CampaignProductsController < ApplicationController
     @campaign_product.destroy
     redirect_to campaign_path(@campaign)
   end
-    
+
   def show
     @campaign_product = CampaignProduct.find(params[:id])
     @products = Product.find(params[:product_id])

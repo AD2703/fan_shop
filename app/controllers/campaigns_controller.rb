@@ -1,5 +1,4 @@
-class CampaignsController < ApplicationController
-
+class CampaignsController < ApplicationControllers
   def new
     @campaign = Campaign.new
   end
@@ -8,13 +7,13 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
-    redirect_to dashboard_path
+      redirect_to dashboard_path
     else
       render :new
     end
   end
 
-   def edit
+  def edit
     @campaign = Campaign.find(params[:id])
   end
 
@@ -36,5 +35,4 @@ class CampaignsController < ApplicationController
   def campaign_params
     params.require(:campaign).permit(:name, :duration_days, :active)
   end
-
 end
