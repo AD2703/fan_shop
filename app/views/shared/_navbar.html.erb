@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="">Fan Shop</a>
+  <%= link_to "Fan Shop", root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,12 +7,12 @@
     <ul class="navbar-nav">
     <div class="box">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Shop<span class="sr-only">(current)</span></a>
+        <%= link_to "Artists", users_path, class: "nav-link" %>
       </li>
       </div>
       <div class="box">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Design your own<span class="sr-only">(current)</span></a>
+      <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
       </li>
       </div>
       <div class="box">
@@ -22,5 +22,5 @@
       </div>
     </ul>
   </div>
-    <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="button">Sign in</button>
+    <%= link_to "Login", user_session_path, class: "nav-link" %>
 </nav>

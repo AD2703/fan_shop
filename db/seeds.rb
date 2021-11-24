@@ -9,9 +9,17 @@ User.delete_all
 puts "DB clean"
 
 user1 = User.create(email: 'filipo@gmail.com', password: '123456', name: 'Filipo',seller: true, nickname: 'pipo', description: 'Trap music is my life', address: 'Italy')
+photo_user1 = URI.open('https://i.pinimg.com/originals/19/63/da/1963daa666a8030047e2a9f13beb6975.jpg')
+user1.photo.attach(io: File.open(photo_user1), filename: 'nes.jpg', content_type: 'image/jpg')
 user2 = User.create(email: 'carles@gmail.com', password: '123456', name: 'Carles',seller: true, nickname: 'carls', description: 'Techno music is my life', address: 'Girona')
+photo_user2 = URI.open('https://mejorespeliculas.top/wp-content/uploads/2020/06/Dise%C3%B1o-sin-t%C3%ADtulo-2020-06-24T155502.517-min.jpg')
+user2.photo.attach(io: File.open(photo_user2), filename: 'nes.jpg', content_type: 'image/jpg')
 user3 = User.create(email: 'max@gmail.com', password: '123456', name: 'Max',seller: false, nickname: 'maxim', description: 'Rock music is my life', address: 'Belgium')
+photo_user3 = URI.open('https://i.pinimg.com/originals/2c/0c/e8/2c0ce826414c964703e12c1ad8e1bd96.png')
+user3.photo.attach(io: File.open(photo_user3), filename: 'nes.png', content_type: 'image/png')
 user4 = User.create(email: 'alejandro@gmail.com', password: '123456', name: 'Alejandro',seller: false, nickname: 'alejandrini', description: 'Shit music is my life', address: 'Mexico')
+photo_user4 = URI.open('https://i.pinimg.com/564x/be/d0/77/bed077aaca3aaab4b167245fec3c322b.jpg')
+user4.photo.attach(io: File.open(photo_user4), filename: 'nes.jpg', content_type: 'image/jpg')
 
 puts "Users created"
 
@@ -115,4 +123,3 @@ puts "Order Items created"
 payment1 = Payment.create(order: order1)
 payment2 = Payment.create(order: order3)
 payment3 = Payment.create(order: order5)
-

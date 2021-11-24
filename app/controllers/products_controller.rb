@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
-     redirect_to dashboard_path
+      redirect_to dashboard_path
     else
       render :new
     end
