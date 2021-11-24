@@ -20,10 +20,11 @@ class CampaignsController < ApplicationController
     @campaign.update(campaign_params)
     redirect_to dashboard_path
   end
-  
+
   def show
     @campaign = Campaign.find(params[:id])
-    @non_campaign_products = Products.where(user: current_user)
+    @non_campaign_products = Product.where(user: current_user)
+    @campaign_product = CampaignProduct.new
   end
 
   private
@@ -31,5 +32,5 @@ class CampaignsController < ApplicationController
   def campaign_params
     params.require(:campaign).permit(:name, :duration_days, :active)
   end
-  
+
 end
