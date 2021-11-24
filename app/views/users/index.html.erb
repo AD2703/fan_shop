@@ -1,0 +1,14 @@
+
+<div class="cards card-users" >
+  <% @users.each do |user| %>
+    <% if user.photo.attached? %>
+      <div class="card-category">
+        <%= cl_image_tag user.photo.key %>
+      </div>
+    <% else %>
+      <div class="card-category">
+        <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrheqyGFt5E7EEPUc3L2lcIrb9Xb_Vw624Q&usqp=CAU")%>
+      </div>
+    <% end %>
+  <% end %>
+</div>
