@@ -88,6 +88,18 @@
   }
 }
 
+.btn-dashboard:hover{
+  background: black;
+  color: white;
+  border: none;
+  padding: 5px 19px;
+  border-radius: 6px;
+
+  a{
+    color: white
+  }
+}
+
 .title-box {
   display: flex;
   .btn-dashboard{
