@@ -14,6 +14,7 @@
 
 <%= button_to 'Edit', edit_campaign_path(@campaign),method: :get, class: "btn btn-success m-2" %>
 
+
 <div class="con2">
     <ul>
       <% @non_campaign_products.each do |non_campaign_product| %>
@@ -23,7 +24,7 @@
           <br>
           <%= f.input :product_id, input_html: { value: non_campaign_product.id, hidden: true  } %>
           <br>
-          <%= f.submit "Add product campaign", class: "btn btn-primary float-right"%>
+          <%= f.submit "Add product campaign", class: "btn-dashboard" %>
         <% end %>
       <% end %>
     </ul>
