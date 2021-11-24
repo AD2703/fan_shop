@@ -1,6 +1,7 @@
 class Campaign < ApplicationRecord
   belongs_to :user
   has_many :campaign_products
+  has_many :order_items
   has_many :products, through: :campaign_products
   has_one_attached :photo
   validates :name, presence: true

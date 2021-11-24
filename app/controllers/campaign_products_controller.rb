@@ -13,6 +13,7 @@ class CampaignProductsController < ApplicationController
   def destroy
     product = Product.find(params[:id])
     @campaign_product = CampaignProduct.where(product: product)[0]
+    @campaign = @campaign_product.campaign
     @campaign_product.destroy
     redirect_to campaign_path(@campaign)
   end

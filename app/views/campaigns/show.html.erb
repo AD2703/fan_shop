@@ -1,14 +1,20 @@
 <div class="background-page">
-  <div class="con2">
-    <h1><%=@campaign.name%></h1>
-      <ul>
-      <b>Campaign Active? </b>
-          <%=@campaign.active %>
-      </ul>
+  <div>
+    <h1><%=@campaign.name.upcase%></h1>
+    <p>Duration: <%= @campaign.duration_days %> days</p>
+    <%if @campaign.active %>
+      <p>State: Active</p>
+    <% else %>
+      <p>State: Inactive</p>
+    <% end %>
     <div class="btn-user-box">
         <button type="button" class="btn-dashboard" ><%= link_to "Edit", edit_campaign_path(@campaign),method: :get %></button>
     </div>
   </div>
+  <br>
+
+  <h3>Campaign products:</h3>
+
   <div class="products">
       <% @campaign.products.each do |product| %>
         <div class="product">
@@ -29,7 +35,7 @@
       <% end %>
   </div>
 
-  <h1>Add products:</h1>
+  <h3>Add products:</h3>
 
  <div class="products">
       <% @products.each do |product| %>
