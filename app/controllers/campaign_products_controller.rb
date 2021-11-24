@@ -2,6 +2,9 @@ class CampaignProductsController < ApplicationController
 
 
   def create
+  end
+
+  def show
     @product = Product.find(params[:campaign_product][:product_id])
 
     @campaign_product = CampaignProduct.new
