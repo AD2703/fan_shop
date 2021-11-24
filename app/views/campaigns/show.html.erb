@@ -28,20 +28,30 @@
         </div>
       <% end %>
   </div>
-  
+
   <h1>Add products:</h1>
-  <div class="con2">
-      <ul>
-        <% @products.each do |non_campaign_product| %>
-          <%= cl_image_tag non_campaign_product.photo.key, class: "card-dash-img" %>
-          <%=non_campaign_product.name %>
-          <%= simple_form_for([@campaign, @campaign_product]) do |f| %>
-            <br>
-            <%= f.input :product_id, input_html: { value: non_campaign_product.id, hidden: true  } %>
-            <br>
-            <%= f.submit "Add product campaign", class: "btn btn-primary float-right"%>
-          <% end %>
-        <% end %>
-      </ul>
+
+ <div class="products">
+      <% @products.each do |product| %>
+        <div class="product">
+          <div class="product-image">
+            <%= cl_image_tag product.photo.key, class: "card-dash-img" %>
+          </div>
+          <div class="product-info">
+            <div class="product-price-name">
+              <p><%= product.name %> </p>
+              <p>€ <%= product.price %></p>
+            </div>
+            <div class="btn-user-box">
+              <%= simple_form_for([@campaign, @campaign_product]) do |f| %>
+                <div style="display:none;">
+                <%= f.input :product_id, input_html: { value: product.id, hidden: true  }%>
+                </div>
+                <%= f.submit "Add product", class: "btn-dashboard"%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>

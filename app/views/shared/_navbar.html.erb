@@ -3,24 +3,30 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-    <div class="box">
-      <li class="nav-item active">
-        <%= link_to "Artists", users_path, class: "nav-link" %>
-      </li>
-      </div>
+  <% if user_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
       <div class="box">
-      <li class="nav-item active">
-      <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
-      </li>
-      </div>
-      <div class="box">
-      <li class="nav-item active">
-        <%= link_to "About us", about_path, class: "nav-link" %>
-      </li>
-      </div>
-    </ul>
-  </div>
-    <%= link_to "Login", user_session_path, class: "nav-link" %>
+        <li class="nav-item active">
+          <%= link_to "Artists", users_path, class: "nav-link" %>
+        </li>
+        </div>
+        <div class="box">
+        <li class="nav-item active">
+        <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
+        </li>
+        </div>
+        <div class="box">
+        <li class="nav-item active">
+          <%= link_to "About us", about_path, class: "nav-link" %>
+        </li>
+        </div>
+      </ul>
+    </div>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+  <% else %>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    </div>
+      <%= link_to "Login", user_session_path, class: "nav-link" %>
+  <% end %>
 </nav>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "about", to: "pages#about"
   resources :products, only: %i[new create edit update show index]
   resources :campaigns, only: %i[new create edit update show] do
-    resources :campaign_products, only: %i[create]
+    resources :campaign_products, only: %i[create index]
   end
   resources :campaign_products, only: %i[show index destroy] do
     resources :order_items, only: %i[create]
