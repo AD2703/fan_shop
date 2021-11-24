@@ -1,2 +1,30 @@
-<h1>show campaign</h1>
+<%# <h1>show campaign</h1>
 <% %>
+
+<div class="con2">
+  <h1>- show campaign:</h1>
+    <ul>
+    <b>Campaign Name </b>
+        <%=@campaign.name%>
+        <br>
+    <b>Campaign Active? </b>
+        <%=@campaign.active %>
+    </ul>
+</div>
+
+<%= button_to 'Edit', edit_campaign_path(@campaign),method: :get, class: "btn btn-success m-2" %>
+
+<div class="con2">
+    <ul>
+      <% @non_campaign_products.each do |non_campaign_product| %>
+        <%=non_campaign_product.name %>
+        <%= simple_form_for([@campaign, @campaign_product]) do |f| %>
+
+          <br>
+          <%= f.input :product_id, input_html: { value: non_campaign_product.id, hidden: true  } %>
+          <br>
+          <%= f.submit "Add product campaign", class: "btn btn-primary float-right"%>
+        <% end %>
+      <% end %>
+    </ul>
+</div>

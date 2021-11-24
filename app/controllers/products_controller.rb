@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  def index
+    @products = Product.where(user: current_user)
+  end
 
   def new
     @product = Product.new
@@ -8,10 +11,14 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
-     redirect_to dashboard_path
+      redirect_to dashboard_path
     else
       render :new
     end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
   end
 
   def update

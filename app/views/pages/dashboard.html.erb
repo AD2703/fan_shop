@@ -1,16 +1,71 @@
-<h1><%= @user.name %></h1>
-<p>Edit profile</p>
-<h1><%= @products.count %></h1>
-<p>N. Products</p>
-<h1><%= @campaigns.count %></h1>
-<p>N. Campaigns</p>
-<h1>1000</h1>
-<p>Sales this month</p>
-<h1>Products</h1>
-<% @products.each do |product| %>
-  <p><%= product.price %><%= product.name %></p>
-<% end %>
-<h1>Campaigns</h1>
-<% @campaigns.each do |campaign| %>
-  <p><%= campaign.duration_days %><%= campaign.name %><%= campaign.active %></p>
-<% end %>
+<div class="dashboard">
+  <div class="user-box">
+    <h1>Hi, <%= @user.name %></h1>
+    <p>Edit profile</p>
+    <h1><%= @products.count %></h1>
+    <p>N. Products</p>
+    <h1><%= @campaigns.count %></h1>
+    <p>N. Campaigns</p>
+    <h1>1000 €</h1>
+    <p>Sales this month</p>
+    <br>
+    <div class="btn-user-box text-center">
+          <button type="button" class="btn-dashboard" ><%= link_to "Add a product", new_product_path(@user) %></button>
+    </div>
+    <br>
+    <div class="btn-user-box text-center">
+          <button type="button" class="btn-dashboard" ><%= link_to "Add a campaign", new_campaign_path(@user) %></button>
+    </div>
+  </div>
+  <div class="dash">
+    <div class="title-box">
+      <h1>My Products</h1>
+      <div class="btn-user-box">
+        <button type="button" class="btn-dashboard" ><%= link_to "All", products_path %></button>
+      </div>
+    </div>
+    <div class="products">
+      <% @products.each do |product| %>
+        <div class="product">
+          <div class="product-image">
+            <%= cl_image_tag product.photo.key, class: "card-dash-img" %>
+          </div>
+          <div class="product-info">
+            <div class="product-price-name">
+              <p><%= product.name %> </p>
+              <p>€ <%= product.price %></p>
+            </div>
+            <div class="btn-user-box">
+              <button type="button" class="btn-dashboard" ><%= link_to "Edit", edit_product_path(product) %></button>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <h1>My Campaigns</h1>
+    <div class="campaigns">
+      <% @campaigns.each do |campaign| %>
+        <p><%= campaign.duration_days %><%= campaign.name %><%= campaign.active %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="products-box">
+  <% @products.each do |product| %>
+    <div class="product-card">
+      <div class="product-img">
+        <%= cl_image_tag product.photo.key %>
+      </div>
+      <div class="product-card-info">
+        <div class="product-card-price">
+          <h5><%= product.name %> </h5>
+          <p> <%= product.price %> €</p>
+        </div>
+        <div class="btn-user-box">
+          <button type="button" class="btn-card-dashboard" ><%= link_to "Edit", edit_product_path(product) %></button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
