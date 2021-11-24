@@ -7,7 +7,10 @@
     <%= product.price %>
     <%= product.garment %>
     <%= product.color %>
+    <% if product.photo.attached? %>
+      <%= cl_image_tag product.photo.key %>
+    <% else %>
+      <%= image_tag("https://www.fundacioncnse.org/educa/bancolse/ropa/descargas/camisa-dibujo2.jpg")%>
+    <% end %>
   <% end %>
 </div>
-
-<!--cl_image_tag product.photo.key-->
