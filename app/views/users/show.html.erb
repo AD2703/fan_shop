@@ -1,16 +1,6 @@
 <%= @user.name %>
-<div class="card" style="width: 18rem;">
-  <% @campaigns.each do |campaign| %>
-    <%= campaign.name %>
-  <% end %>
-  <% @products.each do |product| %>
-    <%= product.price %>
-    <%= product.garment %>
-    <%= product.color %>
-    <% if product.photo.attached? %>
-      <%= cl_image_tag product.photo.key %>
-    <% else %>
-      <%= image_tag("https://www.fundacioncnse.org/educa/bancolse/ropa/descargas/camisa-dibujo2.jpg")%>
-    <% end %>
-  <% end %>
-</div>
+<br>
+
+<% @campaigns.each do |campaign| %>
+    <%= link_to campaign.name, campaign_campaign_products_path(campaign) %>
+<% end %>
