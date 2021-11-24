@@ -6,5 +6,11 @@
 <p>N. Campaigns</p>
 <h1>1000</h1>
 <p>Sales this month</p>
+<h1>Products</h1>
 <% @products.each do |product| %>
+  <p><%= product.price %><%= product.name %></p>
+<% end %>
+<h1>Campaigns</h1>
+<% @campaigns.each do |campaign| %>
+  <p><%= campaign.duration_days %><%= campaign.name %><%= campaign.active %></p>
 <% end %>

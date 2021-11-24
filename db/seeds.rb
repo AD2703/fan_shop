@@ -13,10 +13,14 @@ user2 = User.create(email: 'carles@gmail.com', password: '123456', name: 'Carles
 user3 = User.create(email: 'max@gmail.com', password: '123456', name: 'Max',seller: false, nickname: 'maxim', description: 'Rock music is my life', address: 'Belgium')
 user4 = User.create(email: 'alejandro@gmail.com', password: '123456', name: 'Alejandro',seller: false, nickname: 'alejandrini', description: 'Shit music is my life', address: 'Mexico')
 
+puts "Users created"
+
 campaign1 = Campaign.create(user: user1, name:'first campaign', duration_days: 15, active: true)
 campaign2 = Campaign.create(user: user1, name:'second campaign', duration_days: 20, active: false)
 campaign3 = Campaign.create(user: user2, name:'third campaign', duration_days: 10, active: true)
 campaign4 = Campaign.create(user: user2, name:'forth campaign', duration_days: 25, active: false)
+
+puts "Campaigns created"
 
 product1 = Product.create(user: user1, name:'t-shirt1', price: 25, garment: 't-shirt', color:'white', publish: true)
 photo1 = URI.open('https://everpress.imgix.net/img/campaign/original/619cb705730bd7.14423200.png')
@@ -59,6 +63,9 @@ photo10 = URI.open('https://everpress.imgix.net/img/campaign/original/61803819ab
 product10.photo.attach(io: File.open(photo10), filename: 'nes.png', content_type: 'image/png')
 
 
+puts "Products created"
+
+
 campaignproduct1 = CampaignProduct.create(product: product1, campaign: campaign1)
 campaignproduct2 = CampaignProduct.create(product: product2, campaign: campaign1)
 campaignproduct3 = CampaignProduct.create(product: product3, campaign: campaign1)
@@ -69,4 +76,43 @@ campaignproduct7 = CampaignProduct.create(product: product7, campaign: campaign3
 campaignproduct8 = CampaignProduct.create(product: product8, campaign: campaign4)
 campaignproduct9 = CampaignProduct.create(product: product9, campaign: campaign4)
 campaignproduct10 = CampaignProduct.create(product: product10, campaign: campaign4)
+
+puts "Campaign Products created"
+
+order1 = Order.create(user: user3)
+order2 = Order.create(user: user3)
+order3 = Order.create(user: user4)
+order4 = Order.create(user: user4)
+order5 = Order.create(user: user1)
+order6 = Order.create(user: user2)
+
+puts "Orders created"
+
+orderitem1 = OrderItem.create(size: "L", quantity: 5, order: order1, campaign_product: campaignproduct1)
+orderitem2 = OrderItem.create(size: "S", quantity: 1, order: order1, campaign_product: campaignproduct2)
+orderitem3 = OrderItem.create(size: "M", quantity: 4, order: order1, campaign_product: campaignproduct3)
+orderitem4 = OrderItem.create(size: "L", quantity: 3, order: order1, campaign_product: campaignproduct4)
+orderitem5 = OrderItem.create(size: "S", quantity: 1, order: order2, campaign_product: campaignproduct5)
+orderitem6 = OrderItem.create(size: "M", quantity: 3, order: order2, campaign_product: campaignproduct6)
+orderitem7 = OrderItem.create(size: "L", quantity: 2, order: order2, campaign_product: campaignproduct7)
+orderitem8 = OrderItem.create(size: "S", quantity: 8, order: order2, campaign_product: campaignproduct8)
+orderitem9 = OrderItem.create(size: "L", quantity: 5, order: order3, campaign_product: campaignproduct9)
+orderitem10 = OrderItem.create(size: "S", quantity: 1, order: order3, campaign_product: campaignproduct10)
+orderitem11 = OrderItem.create(size: "M", quantity: 4, order: order3, campaign_product: campaignproduct3)
+orderitem12 = OrderItem.create(size: "L", quantity: 3, order: order4, campaign_product: campaignproduct4)
+orderitem13 = OrderItem.create(size: "S", quantity: 1, order: order4, campaign_product: campaignproduct5)
+orderitem14 = OrderItem.create(size: "M", quantity: 3, order: order4, campaign_product: campaignproduct9)
+orderitem15 = OrderItem.create(size: "L", quantity: 2, order: order4, campaign_product: campaignproduct7)
+orderitem16 = OrderItem.create(size: "S", quantity: 8, order: order5, campaign_product: campaignproduct8)
+orderitem17 = OrderItem.create(size: "L", quantity: 2, order: order5, campaign_product: campaignproduct7)
+orderitem18 = OrderItem.create(size: "S", quantity: 8, order: order5, campaign_product: campaignproduct10)
+orderitem19 = OrderItem.create(size: "L", quantity: 5, order: order6, campaign_product: campaignproduct1)
+orderitem20 = OrderItem.create(size: "S", quantity: 1, order: order6, campaign_product: campaignproduct2)
+orderitem21 = OrderItem.create(size: "M", quantity: 4, order: order6, campaign_product: campaignproduct3)
+
+puts "Order Items created"
+
+payment1 = Payment.create(order: order1)
+payment2 = Payment.create(order: order3)
+payment3 = Payment.create(order: order5)
 

@@ -10,7 +10,6 @@ class User < ApplicationRecord
   has_many :order_items, through: :orders
   has_many :payments, through: :orders
   validates :name, presence: true
-  validates :seller, presence: true
   validates :nickname, presence: true, uniqueness: true
   validates :address, presence: true
   validates :email, format: { with: /\A.*@.*\.com\z/ }

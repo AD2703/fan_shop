@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @user = current_user
     @products = @user.products
     @campaigns = @user.campaigns
+    @orders = @user.orders
   end
 
   def home
