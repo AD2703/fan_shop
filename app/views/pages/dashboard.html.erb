@@ -53,22 +53,3 @@
     </div>
   </div>
 </div>
-
-<div class="products-box">
-  <% @products.each do |product| %>
-    <div class="product-card">
-      <div class="product-img">
-        <%= cl_image_tag product.photo.key %>
-      </div>
-      <div class="product-card-info">
-        <div class="product-card-price">
-          <h5><%= product.name %> </h5>
-          <p> <%= product.price %> €</p>
-        </div>
-        <div class="btn-user-box">
-          <button type="button" class="btn-card-dashboard" ><%= link_to "Edit", edit_product_path(product) %></button>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
