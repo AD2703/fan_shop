@@ -46,6 +46,9 @@
     <div class="campaigns">
       <% @campaigns.each do |campaign| %>
         <p><%= campaign.duration_days %><%= campaign.name %><%= campaign.active %></p>
+        <div class="btn-user-box">
+          <button type="button" class="btn-dashboard" ><%= link_to "More", campaign_path(campaign) %></button>
+        </div>
       <% end %>
     </div>
   </div>

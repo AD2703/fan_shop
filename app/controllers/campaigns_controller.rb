@@ -23,7 +23,7 @@ class CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
-    @non_campaign_products = Product.where(user: current_user)
+    @products = current_user.products - @campaign.products
     @campaign_product = CampaignProduct.new
   end
 

@@ -10,8 +10,14 @@ class CampaignProductsController < ApplicationController
     @campaign_product.campaign = @campaign
     @campaign.publish = true
     @campaign_product.save
-    redirect_to dashboard_path
+    redirect_to campaign_path(@campaign)
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    @campaign_product = CampaignProduct.where(product: product)[0]
+    @campaign_product.destroy
+    redirect_to campaign_path(@campaign)
+  end
 
 end
