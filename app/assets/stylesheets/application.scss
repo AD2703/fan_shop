@@ -12,3 +12,38 @@
 @import "components/index";
 @import "pages/index";
 
+@import url('http://fonts.cdnfonts.com/css/helvetica-neue-lt-pro');
+
+h1{
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
+}
+
+h2 {
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  padding-left: 60px;
+  font-size: 30px;
+}
+
+h3{
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
+}
+
+p{
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
+}
+
+a{
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
+  color: black
+}
+
+.background-page{
+  background-color: white;
+  padding: 15px;
+}
+
+.porducts-index{
+  display: grid;
+}
