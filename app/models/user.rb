@@ -13,4 +13,5 @@ class User < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true
   validates :address, presence: true
   validates :email, format: { with: /\A.*@.*\.com\z/ }
+  has_one_attached :photo
 end

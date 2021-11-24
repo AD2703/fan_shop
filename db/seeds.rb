@@ -62,7 +62,9 @@ product10 = Product.create(user: user2, name:'long-sleeve2', price: 23, garment:
 photo10 = URI.open('https://everpress.imgix.net/img/campaign/original/61803819ab95c6.87146106.png')
 product10.photo.attach(io: File.open(photo10), filename: 'nes.png', content_type: 'image/png')
 
+
 puts "Products created"
+
 
 campaignproduct1 = CampaignProduct.create(product: product1, campaign: campaign1)
 campaignproduct2 = CampaignProduct.create(product: product2, campaign: campaign1)
@@ -113,3 +115,4 @@ puts "Order Items created"
 payment1 = Payment.create(order: order1)
 payment2 = Payment.create(order: order3)
 payment3 = Payment.create(order: order5)
+

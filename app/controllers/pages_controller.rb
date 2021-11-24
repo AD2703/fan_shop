@@ -10,4 +10,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def shop
+    @user = User.find(params[:id])
+  end
 end
