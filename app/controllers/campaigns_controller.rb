@@ -14,6 +14,10 @@ class CampaignsController < ApplicationController
     end
   end
 
+   def edit
+    @campaign = Campaign.find(params[:id])
+  end
+
   def update
     @campaign = Campaign.find(params[:id])
     @campaign.user = current_user

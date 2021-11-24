@@ -12,7 +12,7 @@
     </ul>
 </div>
 
- <%= button_to 'Edit', edit_campaign_path(@campaign),method: :get, class: "btn btn-success m-2" %>
+ <%= button_to 'Edit', edit_campaign_path(@campaign),method: :get, class: "btn-dashboard" %>
 
 <div class="con2">
     <ul>
@@ -23,7 +23,7 @@
           <br>
           <%= f.input :product_id, input_html: { value: non_campaign_product.id, hidden: true  } %>
           <br>
-          <%= f.submit "Add product campaign", class: "btn btn-primary float-right"%>
+          <%= f.submit "Add product campaign", class: "btn-dashboard" %>
         <% end %>
       <% end %>
     </ul>
