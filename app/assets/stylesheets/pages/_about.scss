@@ -1,0 +1,70 @@
+body {
+  font-family: "Helvetica Neue LT";
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.card-about {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: grid;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  width: 500px;
+  height: 500px;
+  margin-bottom: 30px;
+}
+
+.img-about {
+  padding: 15px;
+  width: 300px;
+  height: 300px;
+  align-items: center;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container-about {
+  justify-content: space-between;
+}
+
+.title-about p {
+  position: absolute;
+  text-align: left;
+}
+
+.button-about {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: blue;
+}
+
+.about {
+  text-align: center;
+  padding: 7px;
+}
+
+.about-us {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 25px;
+}
