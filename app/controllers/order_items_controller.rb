@@ -1,19 +1,16 @@
 class OrderItemsController < ApplicationController
   def create
-    @cp = CampaignProduct.find(params[:campaign_product_id])
-    @order = Order.find(params[current_user])
-    @price = @cp.product.price
-    @oi = Order.new(order_items_params)
-    @oi.campaign_product = @cp
-    @oi.order = @order
-    @oi.value = (@oi.quantity * @price)
-    @oi.save
-    redirect_to dashboard_path
+    @order_item = OrderItem.new(order_item_params)
+    @order_item.order = Order.find(params[:order_id])
+    @order_item.value = params[:order_item][:quantity] * @order_item.product.price
+    @order_item.save
+
+    redirect_to campaign_campaign_products_path(@order_item.campaign)
   end
 
   private
 
-  def order_items_params
-    params.require(:order_item).permit(:quantity, :size)
+  def order_item_params
+    params.require(:order_item).permit(:quantity, :size, :campaign_id, :product_id)
   end
 end
