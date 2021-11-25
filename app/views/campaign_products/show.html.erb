@@ -1,1 +1,12 @@
+<%= @product.name %>
 
+USER DOES NOT HAVE A CART: THIS BUTTON SHOULD CREATE A CART AND ADD THE PRODUCT ITEM
+
+<%= simple_form_for [@order, @order_item] do |f| %>
+  <%= f.input :product_id, input_html: {value: @campaign_product.product.id, hidden: true }, label: false %>
+  <%= f.input :campaign_id, input_html: {value: @campaign_product.campaign.id, hidden: true }, label: false %>
+  <%= f.input :order_id, input_html: {value: @order.id, hidden: true }, label: false %>
+  <%= f.input :quantity %>
+  <%= f.input :size %>
+  <%= f.submit %>
+<% end %>

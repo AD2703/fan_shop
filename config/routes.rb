@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   get "about", to: "pages#about"
   resources :products, only: %i[new create edit update show index]
   resources :campaigns, only: %i[new create edit update show] do
-    resources :campaign_products, only: %i[create index]
+    resources :campaign_products, only: %i[create index show]
   end
-  resources :campaign_products, only: %i[show index destroy] do
-    resources :order_items, only: %i[create]
+  resources :orders, only: [:show] do
+    resources :order_items, only: [:create]
   end
   resources :campaigns, only: [] do
     member do
@@ -18,4 +18,5 @@ Rails.application.routes.draw do
       patch :finish
     end
   end
+  resources :campaign_products, only: %i[destroy]
 end

@@ -87,12 +87,12 @@ campaignproduct10 = CampaignProduct.create(product: product10, campaign: campaig
 
 puts "Campaign Products created"
 
-order1 = Order.create(user: user3)
-order2 = Order.create(user: user3)
-order3 = Order.create(user: user4)
-order4 = Order.create(user: user4)
-order5 = Order.create(user: user1)
-order6 = Order.create(user: user2)
+order1 = Order.create(user: user3, status: "pending")
+order2 = Order.create(user: user3, status: "paid")
+order3 = Order.create(user: user4, status: "pending")
+order4 = Order.create(user: user4, status: "rejected")
+order5 = Order.create(user: user2, status: "pending")
+order6 = Order.create(user: user2, status: "paid")
 
 puts "Orders created"
 

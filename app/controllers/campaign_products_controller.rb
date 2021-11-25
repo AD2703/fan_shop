@@ -20,8 +20,19 @@ class CampaignProductsController < ApplicationController
 
   def show
     @campaign_product = CampaignProduct.find(params[:id])
-    @products = Product.find(params[:product_id])
-    @campaign_product.products = @products
+    @product = @campaign_product.product
+    @campaign = @campaign_product.campaign
+    @order_item = OrderItem.new
+    last_order = current_user.orders.last
+    if last_order.status == "paid" || last_order.status == "rejected" || current_user.orders.empty?
+      @order = Order.new(
+        user: current_user,
+        status: "pending"
+      )
+      @order.save
+    elsif last_order.status == "pending"
+      @order = last_order
+    end
   end
 
   def index
