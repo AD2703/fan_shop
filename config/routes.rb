@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   resources :campaigns, only: %i[new create edit update show] do
     resources :campaign_products, only: %i[create index show]
   end
+  resources :orders, only: [:show] do
+    resources :order_items, only: [:create]
+  end
   resources :campaign_products, only: %i[destroy]
 end
