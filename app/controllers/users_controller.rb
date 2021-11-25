@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.all.where(seller: true)
   end
 
   def show
     @user = User.find(params[:id])
     @products = []
-    @campaigns = @user.campaigns
+    @campaigns = @user.campaigns.where(active: true)
     @campaigns.each do |campaign|
       campaign.products.each do |product|
         @products << product

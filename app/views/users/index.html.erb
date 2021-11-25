@@ -3,7 +3,9 @@
       <% @users.each do |user| %>
       <div class="col-lg-4">
         <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key %>
+            <%= link_to user_path(user) do %>
+              <%= cl_image_tag user.photo.key %>
+            <% end %>
         <% else %>
           <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrheqyGFt5E7EEPUc3L2lcIrb9Xb_Vw624Q&usqp=CAU")%>
         <% end %>
