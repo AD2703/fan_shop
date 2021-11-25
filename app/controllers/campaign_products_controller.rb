@@ -20,7 +20,7 @@ class CampaignProductsController < ApplicationController
 
   def show
     @campaign_product = CampaignProduct.find(params[:id])
-    @products = Product.find(params[:product_id])
+    @product = Product.find(params[:product_id])
     @campaign_product.products = @products
   end
 
