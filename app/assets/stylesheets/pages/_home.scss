@@ -40,7 +40,11 @@
   font-size: 20px;
 }
 
-
+.nav-link-start {
+font-weight: bold;
+padding-top: 0px;
+padding-left: 0px;
+}
 
 .link {
   text-decoration: none;
@@ -96,4 +100,9 @@
 
 .row {
   justify-content: space-evenly;
+}
+
+.p-cardshome {
+  color: white;
+  font-weight: bold;
 }
