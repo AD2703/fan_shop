@@ -14,4 +14,8 @@ class PagesController < ApplicationController
   def shop
     @user = User.find(params[:id])
   end
+
+  def cart
+    @user = current_user
+  end
 end

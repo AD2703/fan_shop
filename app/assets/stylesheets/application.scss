@@ -7,12 +7,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
+@import url('http://fonts.cdnfonts.com/css/helvetica-neue-lt-pro');
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "campaign_products/index";
 
-@import url('http://fonts.cdnfonts.com/css/helvetica-neue-lt-pro');
 
 h1{
   font-family: 'Helvetica Neue LT Pro', sans-serif;
