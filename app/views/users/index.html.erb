@@ -1,28 +1,15 @@
-<div class="con1">
-  <div class="row">
+<h1 class="artists-title" style="text-align:center">ARTISTS IN STORE</h1>
+  <div class="row img-artists" style="height: 70vh;overflow: hidden;">
       <% @users.each do |user| %>
-      <div class="col-lg-4">
         <% if user.photo.attached? %>
-            <%= link_to user_path(user) do %>
-              <%= cl_image_tag user.photo.key %>
+            <%= link_to user_path(user), class: 'img-box' do %>
+              <%= cl_image_tag user.photo.key, class: 'img-user' %>
             <% end %>
         <% else %>
           <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrheqyGFt5E7EEPUc3L2lcIrb9Xb_Vw624Q&usqp=CAU")%>
         <% end %>
-      </div>
       <% end %>
   </div>
-</div>
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/originals/19/63/da/1963daa666a8030047e2a9f13beb6975.jpg)">
-    Breakfast
-  </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
-</div>
+
