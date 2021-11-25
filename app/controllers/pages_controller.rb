@@ -8,6 +8,21 @@ class PagesController < ApplicationController
     @orders = @user.orders
     @activecamp = @campaigns.where(active: true)
     @inactivecamp = @campaigns.where(active: false)
+    @orders = Order.where(status: "paid")
+    @user_order_items = []
+    @orders.each do |order|
+      order.order_items.each do |order_item|
+        if order_item.campaign.user == @user
+          @user_order_items << order_item
+        end
+      end
+    end
+    @sales = 0
+    @user_order_items.each do |item|
+      if item.value
+        @sales += item.value
+      end
+    end
   end
 
   def home
