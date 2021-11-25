@@ -1,6 +1,14 @@
 <div class="background-page">
-  <h1>My prodcts</h1>
-   <div class="products">
+  <div class="margin">
+  <br>
+  <div class="title-box">
+      <h1>- My Products:</h1>
+      <div class="btn-user-box">
+        <button type="button" class="btn-dashboard" ><%= link_to "Add product", new_product_path(@user) %></button>
+      </div>
+  </div>
+  </div>
+   <div class="products wrap">
       <% @products.each do |product| %>
         <div class="product">
           <div class="product-image">
@@ -8,12 +16,11 @@
           </div>
           <div class="product-info">
             <div class="product-price-name">
-              <p><%= product.name %> </p>
-              <p>€ <%= product.price %></p>
+              <p><%= product.name.upcase %> </p>
+              <p><strong><%= product.price %> €</strong> </p>
             </div>
             <div class="btn-user-box">
               <button type="button" class="btn-dashboard" ><%= link_to "Edit", edit_product_path(product) %></button>
-              <button type="button" class="btn-dashboard"><%= link_to 'Delete', campaign_product_path(product), method: :delete, data: {confirm: "Are you sure?"} %></button>
             </div>
           </div>
         </div>

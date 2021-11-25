@@ -2,17 +2,30 @@
   padding: 15px;
   display: flex;
   background-color: white;
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .user-box {
   margin: 20px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   padding: 30px;
   width: 30%;
   background-color: white;
-  font-family: "Helvetica Neue LT";
   border-style: solid;
   border-radius: 0%;
   border-width: 2px;
+  height: fit-content;
+  height: 85vh;
+  filter: drop-shadow(0px -2px 9px #8c8c8c24);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: sticky;
+  top: 50px;
 }
 
 .dash {
@@ -36,9 +49,9 @@
 
 
 .product{
-  margin: 10px;
+  margin: 20px;
   background-color: white;
-  height: 50vh;
+  height: 40vh;
   overflow: hidden;
   width: 20vw;
   flex: 0 0 20vw;
@@ -59,22 +72,14 @@
 .product-info {
   display: flex;
   justify-content: space-between;
-  height: 30%;
+  height: 15%;
+  p {
+    margin: 0;
+  }
 }
 
-
-.products-box{
-  display:flex;
-}
-
-.product-card{
-  height: 50vh;
-  overflow: hidden;
-  width: 25vw;
-}
-
-.product-img{
-  height: 70%;
+.product-image{
+  height: 85%;
   overflow: hidden;
 
   img{
@@ -84,22 +89,29 @@
   }
 }
 
-.product-card-info{
-  height: 30%;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
 .btn-dashboard{
-  background: black;
+  background: #000000;
   color: white;
-  border: none;
-  padding: 5px 19px;
+  border: solid;
+  border-color: black;
+  padding: 2px 15px;
   border-radius: 6px;
+  font-family: 'Helvetica Neue LT Pro', sans-serif;
 
   a{
     color: white
+  }
+}
+
+.btn-dashboard-secondary{
+  background: white;
+  color: black;
+  border: solid;
+  padding: 1px 15px;
+  border-radius: 6px;
+
+  a{
+    color: black;
   }
 }
 
@@ -107,7 +119,7 @@
   background: black;
   color: white;
   border: none;
-  padding: 5px 19px;
+  padding: 5px 21px;
   border-radius: 6px;
 
   a{
@@ -115,10 +127,90 @@
   }
 }
 
+.btn-dashboard-secondary:hover{
+  background: white;
+  color: black;
+  border: solid;
+  padding: 1px 18px;
+  border-radius: 6px;
+
+  a{
+    color: black;
+  }
+}
+
 .title-box {
   display: flex;
   .btn-dashboard{
     margin-left: 30px;
-    margin-top: 5px;
+    margin-top: 8px;
+  }
+}
+
+.wrap{
+  flex-wrap: wrap;
+}
+
+.margin{
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.campaign{
+  margin-top: 20px;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-style: solid;
+  border-radius: 0%;
+  border-width: 2px;
+  height: fit-content;
+  height: 100%;
+  filter: drop-shadow(0px -2px 9px #8c8c8c24);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.campaign-top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.campaign-bottom{
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.campaign-images{
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  background-color: white;
+  overflow-x: auto;
+}
+
+.campaign-info{
+  width: 20%;
+  text-align: right;
+}
+
+.campaign-image{
+  background-color: white;
+  height: 40vh;
+  overflow: hidden;
+  width: 20vw;
+  flex: 0 0 20vw;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+
+  &.flex-item:not(:last-of-type) {
+    margin-right: 10px;
   }
 }
