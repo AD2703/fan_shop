@@ -30,6 +30,18 @@ class CampaignsController < ApplicationController
     @campaign_product = CampaignProduct.new
   end
 
+  def start
+    @campaign = Campaign.find(params[:id])
+    @campaign.update(active: true)
+    redirect_to campaign_path(@campaign)
+  end
+
+  def finish
+    @campaign = Campaign.find(params[:id])
+    @campaign.update(active: false)
+    redirect_to campaign_path(@campaign)
+  end
+
   private
 
   def campaign_params

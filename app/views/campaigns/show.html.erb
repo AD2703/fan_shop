@@ -1,21 +1,29 @@
 <div class="background-page">
-  <div>
-    <h1><%=@campaign.name.upcase%></h1>
-    <p>Duration: <%= @campaign.duration_days %> days</p>
-    <%if @campaign.active %>
-      <p>State: Active</p>
-    <% else %>
-      <p>State: Inactive</p>
-    <% end %>
-    <div class="btn-user-box">
-        <button type="button" class="btn-dashboard" ><%= link_to "Edit", edit_campaign_path(@campaign),method: :get %></button>
+  <div class="margin">
+    <br>
+    <div class="title-box">
+      <h1>- <%=@campaign.name.upcase%>:</h1>
+      <div class="btn-user-box">
+        <button type="button" class="btn-dashboard" ><%= link_to "Edit campaign", edit_campaign_path(@campaign),method: :get %></button>
+      </div>
     </div>
-  </div>
-  <br>
-
-  <h3>Campaign products:</h3>
-
-  <div class="products">
+    <div class="margin">
+      <p>Duration: <%= @campaign.duration_days %> days</p>
+      <%if @campaign.active %>
+        <p>State: Active</p>
+        <%= form_tag finish_campaign_path(@campaign), method: :patch, class: "" do %>
+        <%= submit_tag "Finsih campaign", class: "btn-dashboard"  %>
+        <% end %>
+      <% else %>
+        <p>State: Inactive</p>
+        <%= form_tag start_campaign_path(@campaign), method: :patch, class: "" do %>
+        <%= submit_tag "Start campaign", class: "btn-dashboard"  %>
+        <% end %>
+      <% end %>
+    </div>
+    <h3>- Campaign products:</h3>
+    </div>
+  <div class="products wrap">
       <% @campaign.products.each do |product| %>
         <div class="product">
           <div class="product-image">
@@ -23,21 +31,21 @@
           </div>
           <div class="product-info">
             <div class="product-price-name">
-              <p><%= product.name %> </p>
-              <p>€ <%= product.price %></p>
+              <p><%= product.name.upcase %> </p>
+              <p><strong><%= product.price %> €</strong> </p>
             </div>
             <div class="btn-user-box">
-              <button type="button" class="btn-dashboard" ><%= link_to "Edit", edit_product_path(product) %></button>
+              <button type="button" class="btn-dashboard-secondary" ><%= link_to "Edit", edit_product_path(product) %></button>
               <button type="button" class="btn-dashboard"><%= link_to 'Delete', campaign_product_path(product), method: :delete, data: {confirm: "Are you sure?"} %></button>
             </div>
           </div>
         </div>
       <% end %>
   </div>
-
-  <h3>Add products:</h3>
-
- <div class="products">
+  <div class="margin">
+  <h3>- Add products:</h3>
+  </div>
+ <div class="products wrap">
       <% @products.each do |product| %>
         <div class="product">
           <div class="product-image">
@@ -45,8 +53,8 @@
           </div>
           <div class="product-info">
             <div class="product-price-name">
-              <p><%= product.name %> </p>
-              <p>€ <%= product.price %></p>
+              <p><%= product.name.upcase %> </p>
+              <p><strong><%= product.price %> €</strong> </p>
             </div>
             <div class="btn-user-box">
               <%= simple_form_for([@campaign, @campaign_product]) do |f| %>

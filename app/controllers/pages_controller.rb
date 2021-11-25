@@ -6,6 +6,8 @@ class PagesController < ApplicationController
     @products = @user.products
     @campaigns = @user.campaigns
     @orders = @user.orders
+    @activecamp = @campaigns.where(active: true)
+    @inactivecamp = @campaigns.where(active: false)
   end
 
   def home

@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   resources :campaign_products, only: %i[show index destroy] do
     resources :order_items, only: %i[create]
   end
-
+  resources :campaigns, only: [] do
+    member do
+      patch :start
+      patch :finish
+    end
+  end
 end
