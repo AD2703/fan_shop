@@ -4,31 +4,60 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <% if user_signed_in? %>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-      <div class="box">
-        <li class="nav-item active">
-          <%= link_to "Artists", users_path, class: "nav-link" %>
-        </li>
-        </div>
+    <% if current_user.seller %>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
         <div class="box">
-        <li class="nav-item active">
-        <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
-        </li>
-        </div>
+          <li class="nav-item active">
+            <%= link_to "Artists", users_path, class: "nav-link" %>
+          </li>
+          </div>
+          <div class="box">
+          <li class="nav-item active">
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
+          </li>
+          </div>
+          <div class="box">
+          <li class="nav-item active">
+            <%= link_to "About us", about_path, class: "nav-link" %>
+          </li>
+          </div>
+          <div class="box">
+          <li class="nav-item active">
+            <%= link_to "Cart", cart_path, class: "nav-link" %>
+          </li>
+          </div>
+        </ul>
+      </div>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    <% else %>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
         <div class="box">
-        <li class="nav-item active">
-          <%= link_to "About us", about_path, class: "nav-link" %>
-        </li>
-        </div>
-        <div class="box">
-        <li class="nav-item active">
-          <%= link_to "cart", cart_path, class: "nav-link" %>
-        </li>
-        </div>
-      </ul>
-    </div>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <li class="nav-item active">
+            <%= link_to "Artists", users_path, class: "nav-link" %>
+          </li>
+          </div>
+          <div class="box">
+          <li class="nav-item active">
+            <%= link_to "About us", about_path, class: "nav-link" %>
+          </li>
+          </div>
+          <div class="box">
+          <li class="nav-item active">
+            <%= link_to "Cart", cart_path, class: "nav-link" %>
+          </li>
+          </div>
+          <div class="box">
+          <li class="nav-item active">
+            <%= link_to "Become a Seller", edit_user_registration_path(current_user) , class: "nav-link" %>
+          </li>
+          </div>
+        </ul>
+      </div>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+
+    <% end %>
   <% else %>
     <div class="collapse navbar-collapse" id="navbarNav">
     </div>
