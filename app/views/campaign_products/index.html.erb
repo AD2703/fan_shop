@@ -7,22 +7,22 @@
       <p>Duration: <strong><%= @campaign_products[0].campaign.duration_days %> </strong>days</p>
   </div>
   </div>
-   <div class="products wrap">
-      <% @campaign_products.each do |campaign_product|%>
-        <div class="product">
-          <div class="product-image">
-            <%= cl_image_tag campaign_product.product.photo.key, class: "card-dash-img" %>
+  <div class="products wrap">
+    <% @campaign_products.each do |campaign_product|%>
+      <div class="product">
+        <div class="product-image">
+          <%= cl_image_tag campaign_product.product.photo.key, class: "card-dash-img" %>
+        </div>
+        <div class="product-info">
+          <div class="product-price-name">
+            <p><%= campaign_product.product.name.upcase %> </p>
+            <p><strong><%= campaign_product.product.price %> €</strong> </p>
           </div>
-          <div class="product-info">
-            <div class="product-price-name">
-              <p><%= campaign_product.product.name.upcase %> </p>
-              <p><strong><%= campaign_product.product.price %> €</strong> </p>
-            </div>
-            <div class="btn-user-box">
-              <button type="button" class="btn-dashboard" ><%= link_to "More" , campaign_campaign_product_path(campaign_product.campaign, campaign_product) %></button>
-            </div>
+          <div class="btn-user-box">
+            <button type="button" class="btn-dashboard" ><%= link_to "More" , campaign_campaign_product_path(campaign_product.campaign, campaign_product) %></button>
           </div>
         </div>
-      <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
