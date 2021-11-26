@@ -53,6 +53,8 @@
     <h2>Active:</h2>
     <div class="campaigns">
       <% @activecamp.each do |campaign| %>
+      <% orders = 0 %>
+      <% sales = 0 %>
         <div class="campaign">
           <div class="campaign-top">
             <h4><%= campaign.name.upcase %></h4>
@@ -61,6 +63,10 @@
           <div class="campaign-bottom">
             <div class="campaign-images">
               <% campaign.products.each do |product| %>
+                <% orders += product.order_items.where(campaign: campaign).count %>
+                <% product.order_items.where(campaign: campaign).each do |ord| %>
+                  <% sales += ord.value %>
+                <% end %>
                 <div class="campaign-image">
                   <div class="product-image">
                     <%= cl_image_tag product.photo.key, class: "card-dash-img" %>
@@ -69,9 +75,9 @@
               <% end %>
             </div>
             <div class="campaign-info">
-              <h4>40</h4>
+              <h4><%= orders %></h4>
               <p>orders</p>
-              <h4>1029 €</h4>
+              <h4><%= sales %> €</h4>
               <p>sales</p>
               <h4>324 €</h4>
               <p>benefits</p>
@@ -87,6 +93,7 @@
     <h2>Inactive:</h2>
     <div class="campaigns">
       <% @inactivecamp.each do |campaign| %>
+
         <div class="campaign">
           <div class="campaign-top">
             <h4><%= campaign.name.upcase %></h4>
