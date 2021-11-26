@@ -24,22 +24,14 @@ class CampaignProductsController < ApplicationController
     @campaign = @campaign_product.campaign
     @order_item = OrderItem.new
     last_order = current_user.orders.last
-    if last_order.nil?
+    if last_order.nil? || last_order.status == "paid" || last_order.status == "rejected" || current_user.orders.empty?
       @order = Order.new(
         user: current_user,
         status: "pending"
       )
       @order.save
-    else
-      if last_order.status == "paid" || last_order.status == "rejected" || current_user.orders.empty? ||
-        @order = Order.new(
-          user: current_user,
-          status: "pending"
-        )
-        @order.save
-      elsif last_order.status == "pending"
-        @order = last_order
-      end
+    elsif last_order.status == "pending"
+      @order = last_order
     end
   end
 

@@ -34,6 +34,6 @@ class PagesController < ApplicationController
 
   def cart
     @user = current_user
-    @orders = Order.where(status: "pending")
+    @orders = Order.where(status: "pending", user: current_user)
   end
 end
