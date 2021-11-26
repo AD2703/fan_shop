@@ -19,5 +19,10 @@ Rails.application.routes.draw do
       patch :finish
     end
   end
+  resources :orders, only: [] do
+    member do
+      patch :pay
+    end
+  end
   resources :campaign_products, only: %i[destroy]
 end

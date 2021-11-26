@@ -1,20 +1,25 @@
 <% suma = 0 %>
 <div class="background-page">
+<div class="cart">
+
+  <h1>SHOPING BAG</h1>
   <div class="products wrap">
+    <div class="order-items">
     <% @orders.last.order_items.each do |order_item| %>
-      <div class="product">
-        <div class="product-image">
-          <%= cl_image_tag order_item.product.photo.key %>
-        </div>
-        <div class="product-info">
-          <div class="product-price-name">
-          <%= order_item.product.name %>
-          <%= order_item.quantity %>
-          <% suma += order_item.value unless order_item.value.nil? %>
-          </div>
+      <div class="order-item">
+        <div class="order-item-info">
+            <h4><%= order_item.product.name %></h4>
+            <p>- Quantity = <%= order_item.quantity %></p>
+            <p>- Price = </h3><%= order_item.value %></p>
+            <% suma += order_item.value %>
         </div>
       </div>
     <% end %>
+    </div>
+  </div>
+  <h3> Total price = <%= suma.round(2) %> € </h3>
+  <div class="btn-user-box text-center">
+    <button type="button" class="btn-dashboard" ><%= link_to "Checkout", pay_order_path(@orders.last), method: :patch, class: ""  %></button>
   </div>
 </div>
-<%= suma %>
+</div>
