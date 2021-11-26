@@ -10,7 +10,7 @@
           <div class="product-price-name">
           <%= order_item.product.name %>
           <%= order_item.quantity %>
-          <% suma += order_item.value %>
+          <% suma += order_item.value unless order_item.value.nil? %>
           </div>
         </div>
       </div>
