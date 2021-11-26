@@ -1,6 +1,29 @@
-<%= @user.name %>
-<br>
-
-<% @campaigns.each do |campaign| %>
-    <%= link_to campaign.name, campaign_campaign_products_path(campaign) %>
-<% end %>
+<div class="showusers">
+  <div>
+    <h1><%= @user.name %></h1>
+  </div>
+    <% @campaigns.each do |campaign| %>
+      <div class="title-box">
+        <h2>- <%= campaign.name.upcase %> :</h2>
+        <div class="btn-user-box">
+          <button type="button" class="btn-dashboard" ><%= link_to "See campaign", campaign_campaign_products_path(campaign) %></button>
+        </div>
+        <p>Duration: <strong><%= campaign.duration_days %> </strong>days</p>
+      </div>
+      <div class="products">
+        <% campaign.products.each do |product| %>
+          <div class="product">
+            <div class="product-image">
+              <%= cl_image_tag product.photo.key, class: "card-dash-img" %>
+            </div>
+            <div class="product-info">
+              <div class="product-price-name">
+                <p><%= product.name.upcase %> </p>
+                <p><strong><%= product.price %> €</strong> </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+</div>
