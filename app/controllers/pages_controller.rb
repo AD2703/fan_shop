@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     @sales = 0
     @user_order_items.each do |item|
       if item.value
-        @sales += item.value
+        @sales += item.value.round(2)
       end
     end
   end

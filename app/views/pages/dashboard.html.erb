@@ -8,7 +8,7 @@
     <p>N. Campaigns</p>
     <h1><%= @user_order_items.count %></h1>
     <p>Orders this month</p>
-    <h1><%= @sales %></h1>
+    <h1><%= @sales.round(2) %> €</h1>
     <p>Sales this month</p>
     <br>
     <div class="btn-user-box text-center">
@@ -71,9 +71,9 @@
             <div class="campaign-info">
               <h4>40</h4>
               <p>orders</p>
-              <h4>1029</h4>
+              <h4>1029 €</h4>
               <p>sales</p>
-              <h4>324</h4>
+              <h4>324 €</h4>
               <p>benefits</p>
               <div class="btn-user-box">
                 <button type="button" class="btn-dashboard" ><%= link_to "See more", campaign_path(campaign) %></button>
