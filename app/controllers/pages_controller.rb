@@ -35,5 +35,8 @@ class PagesController < ApplicationController
   def cart
     @user = current_user
     @orders = Order.where(status: "pending", user: current_user)
+    if @orders.empty?
+      @order = Order.create(user: current_user, status: "pending")
+    end
   end
 end

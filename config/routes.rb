@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :campaign_products, only: %i[create index show]
   end
   resources :orders, only: [:show] do
+    resources :payments, only: :new
     resources :order_items, only: [:create]
   end
   resources :campaigns, only: [] do

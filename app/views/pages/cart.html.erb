@@ -18,8 +18,10 @@
     </div>
   </div>
   <h3> Total price = <%= suma.round(2) %> € </h3>
+  <%if @orders.last.order_items.exists?%>
   <div class="btn-user-box text-center">
     <button type="button" class="btn-dashboard" ><%= link_to "Checkout", pay_order_path(@orders.last), method: :patch, class: ""  %></button>
   </div>
+  <% end %>
 </div>
 </div>
