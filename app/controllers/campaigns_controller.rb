@@ -28,17 +28,19 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     @products = current_user.products - @campaign.products
     @campaign_product = CampaignProduct.new
+
   end
 
   def start
     @campaign = Campaign.find(params[:id])
-    @campaign.update(active: true)
+    @campaign.update(state: "active")
     redirect_to campaign_path(@campaign)
   end
 
   def finish
     @campaign = Campaign.find(params[:id])
-    @campaign.update(active: false)
+    @campaign.update(state: "finished")
+    @campaign.update(benefits: params[:benefits])
     redirect_to campaign_path(@campaign)
   end
 

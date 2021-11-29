@@ -2,14 +2,20 @@
   <div class="user-box">
     <h1>Hi, <%= @user.name %></h1>
     <p><%= link_to "Edit profile", edit_user_registration_path(@user) %></p>
-    <h1><%= @products.count %></h1>
+    <h2><%= @products.count %></h2>
     <p>N. Products</p>
-    <h1><%= @campaigns.count %></h1>
+    <h2><%= @campaigns.count %></h2>
     <p>N. Campaigns</p>
-    <h1><%= @user_order_items.count %></h1>
+    <h2><%= @user_order_items.count %></h2>
     <p>Orders this month</p>
-    <h1><%= @sales.round(2) %> €</h1>
+    <h2><%= @sales.round(2) %> €</h2>
     <p>Sales this month</p>
+    <% ben = 0  %>
+    <% @campaigns.each do |campaign| %>
+      <% ben += campaign.benefits %>
+    <% end %>
+    <h2><%= ben %> €</h2>
+    <p>benefits</p>
     <br>
     <div class="btn-user-box text-center">
           <button type="button" class="btn-dashboard" ><%= link_to "Add a product", new_product_path(@user) %></button>
@@ -53,20 +59,18 @@
     <h2>Active:</h2>
     <div class="campaigns">
       <% @activecamp.each do |campaign| %>
-      <% orders = 0 %>
       <% sales = 0 %>
+      <% campaign.order_items.where(status: "paid").each do |ord| %>
+      <% sales += ord.value %>
+      <% end %>
         <div class="campaign">
           <div class="campaign-top">
             <h4><%= campaign.name.upcase %></h4>
-            <p>Duration: <strong><%= campaign.duration_days %> </strong>days</p>
+            <p><strong><%= campaign.duration_days %> </strong>days left</p>
           </div>
           <div class="campaign-bottom">
             <div class="campaign-images">
               <% campaign.products.each do |product| %>
-                <% orders += product.order_items.where(campaign: campaign).count %>
-                <% product.order_items.where(campaign: campaign).each do |ord| %>
-                  <% sales += ord.value %>
-                <% end %>
                 <div class="campaign-image">
                   <div class="product-image">
                     <%= cl_image_tag product.photo.key, class: "card-dash-img" %>
@@ -75,12 +79,10 @@
               <% end %>
             </div>
             <div class="campaign-info">
-              <h4><%= orders %></h4>
+              <h4><%= campaign.order_items.where(status: "paid").count %></h4>
               <p>orders</p>
               <h4><%= sales.round(2) %> €</h4>
               <p>sales</p>
-              <h4>324 €</h4>
-              <p>benefits</p>
               <div class="btn-user-box">
                 <button type="button" class="btn-dashboard" ><%= link_to "See more", campaign_path(campaign) %></button>
               </div>
@@ -110,11 +112,41 @@
               <% end %>
             </div>
             <div class="campaign-info">
-              <h4>0</h4>
+              <div class="btn-user-box">
+                <button type="button" class="btn-dashboard" ><%= link_to "See more", campaign_path(campaign) %></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <h2>Finished:</h2>
+    <div class="campaigns">
+      <% @finishedcamp.each do |campaign| %>
+      <% sales = 0 %>
+      <% campaign.order_items.where(status: "paid").each do |ord| %>
+      <% sales += ord.value %>
+      <% end %>
+        <div class="campaign">
+          <div class="campaign-top">
+            <h4><%= campaign.name.upcase %></h4>
+          </div>
+          <div class="campaign-bottom">
+            <div class="campaign-images">
+              <% campaign.products.each do |product| %>
+                <div class="campaign-image">
+                  <div class="product-image">
+                    <%= cl_image_tag product.photo.key, class: "card-dash-img" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div class="campaign-info">
+              <h4><%= campaign.order_items.where(status: "paid").count %></h4>
               <p>orders</p>
-              <h4>0</h4>
+              <h4><%= sales.round(2) %> €</h4>
               <p>sales</p>
-              <h4>0</h4>
+              <h4><%= campaign.benefits.round(2) %> €</h4>
               <p>benefits</p>
               <div class="btn-user-box">
                 <button type="button" class="btn-dashboard" ><%= link_to "See more", campaign_path(campaign) %></button>

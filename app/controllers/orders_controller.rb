@@ -5,7 +5,11 @@ class OrdersController < ApplicationController
 
   def pay
     @order = Order.find(params[:id])
+    @order_items = @order.order_items
     @order.update(status: "paid")
+    @order_items.each do |order_item|
+      order_item.update(status: "paid")
+    end
     @user = current_user
     Order.create(
         user: current_user,

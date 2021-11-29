@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @products = []
-    @campaigns = @user.campaigns.where(active: true)
+    @campaigns = @user.campaigns.where(state: "active")
     @campaigns.each do |campaign|
       campaign.products.each do |product|
         @products << product

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_24_184808) do
+ActiveRecord::Schema.define(version: 2021_11_29_112532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,11 +48,11 @@ ActiveRecord::Schema.define(version: 2021_11_24_184808) do
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
     t.integer "duration_days"
-    t.boolean "active"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "publish", default: true
+    t.string "state", default: "inactive"
+    t.float "benefits", default: 0.0
     t.index ["user_id"], name: "index_campaigns_on_user_id"
   end
 
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_184808) do
     t.string "size"
     t.bigint "product_id", null: false
     t.bigint "campaign_id", null: false
+    t.string "status"
     t.index ["campaign_id"], name: "index_order_items_on_campaign_id"
     t.index ["order_id"], name: "index_order_items_on_order_id"
     t.index ["product_id"], name: "index_order_items_on_product_id"

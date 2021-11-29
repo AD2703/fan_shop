@@ -1,9 +1,8 @@
 <div class="form" class="sr-only">
-<h2>Add a product</h2>
+<h1>New product</h1>
 <br>
 <%= simple_form_for(@product) do |f| %>
   <%= f.input :name %>
-  <%= f.input :price %>
   <br>
 <p>Select the type of garment</p>
 
@@ -18,6 +17,42 @@
   <%= f.input :photo, as: :file %>
   <%# <%= f.input :publish, as: :boolean, checked_value: true, unchecked_value: false %>
   <br>
+  <p>Cost per unit depending on the quantity and garment (€ /unit)</p>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">1-10</th>
+      <th scope="col">11-25</th>
+      <th scope="col">26-100</th>
+      <th scope="col">+100</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">T-shirt</th>
+      <td>15.00</td>
+      <td>12.00</td>
+      <td>10.00</td>
+      <td>7.00</td>
+    </tr>
+    <tr>
+      <th scope="row">Hoodie</th>
+      <td>20.00</td>
+      <td>18.00</td>
+      <td>15.00</td>
+      <td>12.00</td>
+    </tr>
+    <tr>
+      <th scope="row">Long sleeve</th>
+      <td>17.00</td>
+      <td>14.00</td>
+      <td>12.00</td>
+      <td>9.00</td>
+    </tr>
+  </tbody>
+</table>
+  <%= f.input :price %>
   <%= f.submit "Save", class: "btn-dashboard"%>
 <% end %>
 </div>
