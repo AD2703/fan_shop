@@ -18,8 +18,7 @@ class OrdersController < ApplicationController
 
     @line_items_array = @order_items.map do |order_item|
       {
-        name: order_item.id,
-        images: [order_item.product.photo.key],
+        name: order_item.product.name,
         amount: (order_item.product.price * 100).to_i,
         currency: "eur",
         quantity: order_item.quantity
