@@ -6,24 +6,25 @@
 
 .banner h1 {
   position: absolute;
-  top: 180px;
+  top: 185px;
   left: 45px;
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 55px;
+  font-size: 68px;
 }
 
 .btn-link {
   font-weight: bold;
   position: absolute;
-  top: 910px;
-  left: 32px;
+  top: 955px;
+  left: 33px;
+  font-size: 20px;
 }
 
 .banner h3 {
   position: absolute;
-  top: 770px;
+  top: 815px;
   left: 45px;
   margin: 0;
   color: white;
@@ -33,7 +34,7 @@
 
 .banner p {
   position: absolute;
-  top: 820px;
+  top: 865px;
   left: 45px;
   margin: 0;
   color: white;
@@ -47,8 +48,14 @@ padding-top: 0px;
 padding-left: 0px;
 }
 
-.link {
-  text-decoration: none;
+.shop-by {
+  font-size: 42px;
+}
+
+.p-cardshome {
+  color: white;
+  font-weight: bold;
+  text-align: center;
 }
 
 .home-title h1 {
@@ -80,23 +87,27 @@ padding-left: 0px;
 
 .row h3 {
   padding-top: 20px;
-  padding-left: 170px;
-  font-size: 28px;
+  padding-left: 160px;
+  font-size: 29px;
+  margin-bottom: 16px;
+  margin-top: 10px;
 }
 
 .row h4 {
   padding-top: 20px;
   padding-left: 160px;
-  font-size: 28px;
+  font-size: 29px;
+  margin-bottom: 16px;
+  margin-top: 10px;
 }
 
 .row h6 {
   padding-left: 102px;
-  font-size: 18px;
+  font-size: 21px;
 }
 
 .row h5 {
-  font-size: 18px;
+  font-size: 21px;
   padding-left: 50px;
 }
 
@@ -125,4 +136,9 @@ padding-left: 0px;
 .nav-link-start {
   margin: 25px;
   font-size: 20px;
+}
+
+.cards {
+  display: grid;
+  justify-content: center;
 }
