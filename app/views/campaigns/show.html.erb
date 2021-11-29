@@ -61,15 +61,14 @@
           </div>
         </div>
       <% end %>
-  <% elsif @campaign.state == "active"  %>
+  <% elsif @campaign.state == "active" || "finished" %>
     <br>
     <% campaignbenefits = 0  %>
     <div class="title-box">
       <h1>- <%=@campaign.name.upcase%>:</h1>
     </div>
     <div class="margin">
-      <p><strong><%= @campaign.duration_days %></strong> days left</p>
-      <p>State: Active</p>
+      <p>State: Finished</p>
     </div>
     <h3>- Campaign products:</h3>
     </div>

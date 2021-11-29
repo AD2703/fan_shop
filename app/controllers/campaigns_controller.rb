@@ -34,14 +34,14 @@ class CampaignsController < ApplicationController
   def start
     @campaign = Campaign.find(params[:id])
     @campaign.update(state: "active")
-    redirect_to campaign_path(@campaign)
+    redirect_to dashboard_path
   end
 
   def finish
     @campaign = Campaign.find(params[:id])
     @campaign.update(state: "finished")
     @campaign.update(benefits: params[:benefits])
-    redirect_to campaign_path(@campaign)
+    redirect_to dashboard_path
   end
 
   private
