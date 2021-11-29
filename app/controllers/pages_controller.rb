@@ -5,9 +5,9 @@ class PagesController < ApplicationController
     @user = current_user
     @products = @user.products
     @campaigns = @user.campaigns
-    @orders = @user.orders
-    @activecamp = @campaigns.where(active: true)
-    @inactivecamp = @campaigns.where(active: false)
+    @activecamp = @campaigns.where(state: "active")
+    @inactivecamp = @campaigns.where(state: "inactive")
+    @finishedcamp = @campaigns.where(state: "finished")
     @orders = Order.where(status: "paid")
     @user_order_items = []
     @orders.each do |order|

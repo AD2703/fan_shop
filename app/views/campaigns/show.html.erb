@@ -1,25 +1,19 @@
 <div class="background-page">
   <div class="margin">
+  <% if @campaign.state == "inactive" %>
     <br>
     <div class="title-box">
       <h1>- <%=@campaign.name.upcase%>:</h1>
-      <div class="btn-user-box">
-        <button type="button" class="btn-dashboard" ><%= link_to "Edit campaign", edit_campaign_path(@campaign),method: :get %></button>
-      </div>
+      <%= form_tag start_campaign_path(@campaign), method: :patch, class: "" do %>
+      <%= submit_tag "Start campaign", class: "btn-dashboard"  %>
+      <% end %>
     </div>
     <div class="margin">
       <p>Duration: <%= @campaign.duration_days %> days</p>
-      <%if @campaign.active %>
-        <p>State: Active</p>
-        <%= form_tag finish_campaign_path(@campaign), method: :patch, class: "" do %>
-        <%= submit_tag "Finsih campaign", class: "btn-dashboard"  %>
-        <% end %>
-      <% else %>
-        <p>State: Inactive</p>
-        <%= form_tag start_campaign_path(@campaign), method: :patch, class: "" do %>
-        <%= submit_tag "Start campaign", class: "btn-dashboard"  %>
-        <% end %>
-      <% end %>
+      <p>State: Inactive</p>
+      <div class="btn-user-box">
+        <button type="button" class="btn-dashboard" ><%= link_to "Edit campaign", edit_campaign_path(@campaign),method: :get %></button>
+      </div>
     </div>
     <h3>- Campaign products:</h3>
     </div>
@@ -45,7 +39,7 @@
   <div class="margin">
   <h3>- Add products:</h3>
   </div>
- <div class="products wrap">
+  <div class="products wrap">
       <% @products.each do |product| %>
         <div class="product">
           <div class="product-image">
@@ -67,5 +61,105 @@
           </div>
         </div>
       <% end %>
+  <% elsif @campaign.state == "active"  %>
+    <br>
+    <% campaignbenefits = 0  %>
+    <div class="title-box">
+      <h1>- <%=@campaign.name.upcase%>:</h1>
+    </div>
+    <div class="margin">
+      <p><strong><%= @campaign.duration_days %></strong> days left</p>
+      <p>State: Active</p>
+    </div>
+    <h3>- Campaign products:</h3>
+    </div>
+    <div class="products wrap">
+      <% @campaign.products.each do |product| %>
+      <% productsales = 0  %>
+      <% productquantity = 0  %>
+      <% @campaign.order_items.where(status: "paid", product: product).each do |order_item| %>
+        <% productsales += order_item.value %>
+        <% productquantity += order_item.quantity %>
+      <% end  %>
+      <% if product.garment == "t-shirt" %>
+        <% if productquantity < 11 %>
+          <% productbenefits = productsales - (productquantity * 15) %>
+          <% cost = 15 %>
+        <% elsif  productquantity < 26 %>
+          <% productbenefits = productsales - (productquantity * 12) %>
+          <% cost = 12 %>
+        <% elsif productquantity < 101 %>
+          <% productbenefits = productsales - (productquantity * 10) %>
+          <% cost = 10 %>
+        <% else %>
+          <% productbenefits = productsales - (productquantity * 7) %>
+          <% cost = 7 %>
+        <% end  %>
+      <% elsif product.garment == "hoodie" %>
+        <% if productquantity < 11 %>
+          <% productbenefits = productsales - (productquantity * 20) %>
+          <% cost = 20 %>
+        <% elsif  productquantity < 26 %>
+          <% productbenefits = productsales - (productquantity * 18) %>
+          <% cost = 18 %>
+        <% elsif productquantity < 101 %>
+          <% productbenefits = productsales - (productquantity * 15) %>
+          <% cost = 15 %>
+        <% else %>
+          <% productbenefits = productsales - (productquantity * 12) %>
+          <% cost = 12 %>
+        <% end  %>
+      <% elsif product.garment == "long-sleeve" %>
+        <% if productquantity < 11 %>
+          <% productbenefits = productsales - (productquantity * 17) %>
+          <% cost = 17 %>
+        <% elsif  productquantity < 26 %>
+          <% productbenefits = productsales - (productquantity * 14) %>
+          <% cost = 14 %>
+        <% elsif productquantity < 101 %>
+          <% productbenefits = productsales - (productquantity * 12) %>
+          <% cost = 12 %>
+        <% else %>
+          <% productbenefits = productsales - (productquantity * 9) %>
+          <% cost = 9 %>
+        <% end  %>
+      <% end %>
+        <div class="product-show">
+          <div class="product-image-show">
+            <%= cl_image_tag product.photo.key, class: "card-dash-img" %>
+          </div>
+          <div class="product-info-show">
+            <div class="product-price-name">
+              <p><%= product.name.upcase %> </p>
+              <p><strong><%= product.price %> €</strong> </p>
+            </div>
+            <div class="product-sales">
+              <p>Sales = <strong><%= productsales.round(2) %></strong> €</p>
+              <p>Total quantity = <strong><%= productquantity %></strong></p>
+              <p>Cost = <strong><%= cost %></strong> €/unit</p>
+              <p>Actual benefits = <strong><%= productbenefits.round(2) %></strong> €</p>
+
+              <% campaignbenefits += productbenefits  %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="campaign-orders">
+    <% sales = 0  %>
+      <h4>Orders = <strong><%= @campaign.order_items.where(status: "paid").count %></strong></h4>
+      <ul>
+      <% @campaign.order_items.where(status: "paid").each do |order_item| %>
+        <p>- Client: <%= order_item.order.user.name %>, Product: <%= order_item.product.name %>, Quantity: <%= order_item.quantity %>, Price: <%= order_item.value %></p>
+        <% sales += order_item.value %>
+      <% end %>
+      </ul>
+      <h4>Sales = <strong><%= sales.round(2) %></strong> €</h4>
+      <h4>Actual Benefits = <strong><%= campaignbenefits.round(2) %></strong> €</h4>
+      <%= form_tag finish_campaign_path(@campaign, benefits: campaignbenefits ), method: :patch, class: "" do %>
+      <%= submit_tag "Finish campaign", class: "btn-dashboard"  %>
+      <% end %>
+    </div>
+  <% end %>
   </div>
 </div>
