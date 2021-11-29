@@ -1,28 +1,29 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 350px 0;
+  padding: 500px 0;
 }
 
 .banner h1 {
   position: absolute;
-  top: 120px;
+  top: 180px;
   left: 45px;
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 50px;
+  font-size: 55px;
 }
 
 .btn-link {
+  font-weight: bold;
   position: absolute;
-  top: 675px;
-  left: 34px;
+  top: 910px;
+  left: 32px;
 }
 
 .banner h3 {
   position: absolute;
-  top: 530px;
+  top: 770px;
   left: 45px;
   margin: 0;
   color: white;
@@ -32,7 +33,7 @@
 
 .banner p {
   position: absolute;
-  top: 580px;
+  top: 820px;
   left: 45px;
   margin: 0;
   color: white;
@@ -50,7 +51,7 @@ padding-left: 0px;
   text-decoration: none;
 }
 
-.title h1 {
+.home-title h1 {
   margin-bottom: 100px;
   margin-top: 100px;
   text-align: center;
@@ -69,40 +70,59 @@ padding-left: 0px;
 
 .imgs-centered{
   justify-content: center;
+  justify-content: space-evenly;
+}
+
+.row {
+  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .row h3 {
   padding-top: 20px;
-  padding-left: 46px;
+  padding-left: 170px;
   font-size: 28px;
 }
 
 .row h4 {
-
   padding-top: 20px;
-  padding-left: 110px;
+  padding-left: 160px;
   font-size: 28px;
 }
 
 .row h6 {
-  padding-left: 42px;
+  padding-left: 102px;
   font-size: 18px;
 }
 
 .row h5 {
   font-size: 18px;
+  padding-left: 50px;
 }
 
-.card h5 {
-  text-align: start;
-  font-size: 25px;
-}
-
-.row {
+.row-home {
   justify-content: space-evenly;
 }
 
-.p-cardshome {
-  color: white;
-  font-weight: bold;
+.become-seller {
+  margin: 75px;
+  text-align: center;
+}
+
+.card-home-title h5 {
+  font-size: 38px;
+  color: black;
+  margin: 25px;
+  text-align: center;
+}
+
+.card-text {
+  margin: 25px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.nav-link-start {
+  margin: 25px;
+  font-size: 20px;
 }
