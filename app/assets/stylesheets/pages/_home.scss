@@ -17,19 +17,19 @@
 .btn-link {
   font-weight: bold;
   position: absolute;
-  top: 955px;
-  left: 33px;
-  font-size: 20px;
+  top: 965px;
+  left: 30px;
+  font-size: 22px;
 }
 
 .banner h3 {
   position: absolute;
   top: 815px;
   left: 45px;
-  margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 40px;
+  font-size: 44px;
+  padding-bottom: 12px;
 }
 
 .banner p {
@@ -39,7 +39,7 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .nav-link-start {
@@ -49,7 +49,8 @@ padding-left: 0px;
 }
 
 .shop-by {
-  font-size: 42px;
+  font-size: 45px;
+  text-align: center;
 }
 
 .p-cardshome {
@@ -74,6 +75,10 @@ padding-left: 0px;
   object-fit: cover;
 }
 
+.cards {
+  margin: 0 auto;
+  float: none;
+}
 
 .imgs-centered{
   justify-content: center;
@@ -116,29 +121,24 @@ padding-left: 0px;
 }
 
 .become-seller {
+  padding: 25px;
   margin: 75px;
-  text-align: center;
+  display: flex;
+  display: block;
 }
 
 .card-home-title h5 {
   font-size: 38px;
   color: black;
   margin: 25px;
-  text-align: center;
 }
 
 .card-text {
   margin: 25px;
   font-size: 20px;
-  text-align: center;
 }
 
 .nav-link-start {
   margin: 25px;
   font-size: 20px;
-}
-
-.cards {
-  display: grid;
-  justify-content: center;
 }
