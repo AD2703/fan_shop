@@ -11,34 +11,35 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 55px;
+  font-size: 58px;
 }
 
 .btn-link {
   font-weight: bold;
   position: absolute;
-  top: 910px;
+  top: 940px;
   left: 32px;
+  font-size: 22px;
 }
 
 .banner h3 {
   position: absolute;
-  top: 770px;
+  top: 790px;
   left: 45px;
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 40px;
+  font-size: 43px;
 }
 
 .banner p {
   position: absolute;
-  top: 820px;
+  top: 840px;
   left: 45px;
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .nav-link-start {
@@ -81,22 +82,24 @@ padding-left: 0px;
 .row h3 {
   padding-top: 20px;
   padding-left: 170px;
-  font-size: 28px;
+  font-size: 29px;
+  margin-bottom: 15px;
 }
 
 .row h4 {
   padding-top: 20px;
   padding-left: 160px;
-  font-size: 28px;
+  font-size: 29px;
+  margin-bottom: 15px;
 }
 
 .row h6 {
   padding-left: 102px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .row h5 {
-  font-size: 18px;
+  font-size: 20px;
   padding-left: 50px;
 }
 
@@ -125,4 +128,18 @@ padding-left: 0px;
 .nav-link-start {
   margin: 25px;
   font-size: 20px;
+}
+
+.p-cardshome {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.shop-by {
+  font-size: 40px;
+}
+
+.cards .artist-pick {
+  justify-content: space-evenly;
 }
