@@ -3,7 +3,7 @@
     <h1>REAL DESIGNS<br> BY REAL ARTISTS<br> FOR REAL PEOPLE</h1>
       <h3>Editors pick</h3>
       <p>Pre-order the freshest new T-shirt designs<br> from your local creators<br> across design, music and beyond</p>
-        <a class="btn btn-link" href="#">Shop now</a>
+      <%= link_to "Shop now", users_path, class: "btn-link" %>
   </div>
 </div>
 <h2 class="shop-by">SHOP BY ARTIST</h2>
@@ -49,15 +49,4 @@
   </div>
 </div>
 
-<div class="card become-seller mx-auto">
-  <div class="card-home-title">
-    <h5>BECOME A SELLER</h5>
-    <p class="card-text">Our platform will take care of your merchandise campaign.
-    No initial investment is needed and therefore you will have to undertake no economic or managment risks,
-    as we will take care of everything in minimum details. We will offer your fans the best comprise between price and quality of the product.
-    What are you waiting for?
-    </p>
-  <%= link_to "START NOW", new_user_registration_path, class: "nav-link-start" %>
-  </div>
-</div>
-</div>
+
