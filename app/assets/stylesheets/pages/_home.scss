@@ -1,3 +1,7 @@
+body {
+  background-color: white;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -123,18 +127,25 @@ padding-left: 0px;
 }
 
 .card-text-become {
-padding-top: 35px;
-padding-bottom: 20px;
+padding-top: 25px;
+padding-bottom: 0px;
 font-size: 22px;
-}
-
-.card-body-become {
-  background-color: white;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .text-home {
   padding-left: 50px;
+}
+
+.card-texb {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+  margin: 0px;
+  width: 1406.67px;
+  padding-bottom: 35px;
+}
+
+.strong-text {
+  text-align: center;
+  padding-bottom: 15px;
 }
