@@ -23,4 +23,8 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 25px;
+    max-width: 270px;
+    max-height: 250px;
+    box-shadow: 10px 10px 5px #ccc;
   }
