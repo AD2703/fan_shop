@@ -28,6 +28,7 @@
                       required: true,
                       input_html: { autocomplete: "new-password" }, placeholder: "Password Confirmation", label: false  %>
           <h3>Complete Your Profile</h3>
+          <%= f.input :address, required: false, autofocus: true, placeholder: "Address", label: false  %>
           <%= f.input :description, placeholder: "Add Your Biography", label: false,:input_html => {:rows => 5}  %>
           <div class="form-names">
             <div class="form-name1">

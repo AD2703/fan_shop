@@ -1,58 +1,74 @@
-<div class="form" class="sr-only">
-<h1>New product</h1>
-<br>
-<%= simple_form_for(@product) do |f| %>
-  <%= f.input :name %>
-  <br>
-<p>Select the type of garment</p>
-
-  <%= f.select :garment, collection: ["T-shirt", "hoodie", "long-sleeve"] %>
-  <br>
-  <p>Select the color of your product</p>
-  <br>
-  <%= f.select :color,  collection: ["white", "grey", "black", "green", "beige", "pink"] %>
-  <br>
-  <br>
-  <p>Upload the picture you want to see on the Garment</p>
-  <%= f.input :photo, as: :file %>
-  <%# <%= f.input :publish, as: :boolean, checked_value: true, unchecked_value: false %>
-  <br>
-  <p>Cost per unit depending on the quantity and garment (€ /unit)</p>
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">1-10</th>
-      <th scope="col">11-25</th>
-      <th scope="col">26-100</th>
-      <th scope="col">+100</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">T-shirt</th>
-      <td>15.00</td>
-      <td>12.00</td>
-      <td>10.00</td>
-      <td>7.00</td>
-    </tr>
-    <tr>
-      <th scope="row">Hoodie</th>
-      <td>20.00</td>
-      <td>18.00</td>
-      <td>15.00</td>
-      <td>12.00</td>
-    </tr>
-    <tr>
-      <th scope="row">Long sleeve</th>
-      <td>17.00</td>
-      <td>14.00</td>
-      <td>12.00</td>
-      <td>9.00</td>
-    </tr>
-  </tbody>
-</table>
-  <%= f.input :price %>
-  <%= f.submit "Save", class: "btn-dashboard"%>
-<% end %>
+<div class="form">
+  <div class= "form-container">
+    <h2>Create A New Product</h2>
+    <div class="form-inputs">
+      <%= simple_form_for(@product) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :name,
+                        required: true, placeholder: "Name", label: false %>
+          <div class="form-names">
+            <div>
+              <div class="form-names1">
+                <%= f.select :garment, collection: ["T-shirt", "hoodie", "long-sleeve"] %>
+                <p>Garment</p>
+              </div>
+              <br>
+              <div class="form-names1">
+                <%= f.select :color,  collection: ["white", "grey", "black", "green", "beige", "pink"] %>
+                <p>Color</p>
+              </div>
+            </div>
+              <label class="btn-singup-photo">
+              Upload A Product Image
+              <span style="display:none;">
+                <%= f.file_field :photo%>
+              </span>
+            </label>
+          </div>
+          <br>
+            <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">1-10</th>
+                <th scope="col">11-25</th>
+                <th scope="col">26-100</th>
+                <th scope="col">+100</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">T-shirt</th>
+                <td>15.00</td>
+                <td>12.00</td>
+                <td>10.00</td>
+                <td>7.00</td>
+              </tr>
+              <tr>
+                <th scope="row">Hoodie</th>
+                <td>20.00</td>
+                <td>18.00</td>
+                <td>15.00</td>
+                <td>12.00</td>
+              </tr>
+              <tr>
+                <th scope="row">Long sleeve</th>
+                <td>17.00</td>
+                <td>14.00</td>
+                <td>12.00</td>
+                <td>9.00</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Cost per unit depending on the quantity and garment (€ /unit)</p>
+          <%= f.input :price, placeholder: "Price", label: false   %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "SAVE", class: "btn-singup-form" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="form-img1">
+  </div>
 </div>

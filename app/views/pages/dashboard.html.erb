@@ -1,24 +1,39 @@
 <div class="dashboard">
   <div class="user-box">
-    <h1>Hi, <%= @user.name %></h1>
-    <p><%= link_to "Edit profile", edit_user_registration_path(@user) %></p>
-    <h2><%= @products.count %> Products</h2>
-    <p><%= link_to "Add a product", new_product_path(@user) %></p>
-    <h2><%= @campaigns.count %> Campaigns</h2>
-    <p><%= link_to "Add a campaign", new_campaign_path(@user) %></p>
-    <h2><%= @user_order_items.count %> Orders</h2>
-    <p>Orders this month</p>
-    <h2><%= @sales.round(2) %> €</h2>
-    <p>Sales</p>
+    <h2>Hi <%= @user.name %>!</h2>
+    <p><%= link_to "Edit Your Profile", edit_user_registration_path(@user) %></p>
+    <div class="products-count">
+      <h3>Number of Products</h3>
+      <h3><strong><%= @products.count %></strong></h3>
+    </div>
+    <div class="products-count">
+      <h3>Number of Campaigns</h3>
+      <h3><strong><%= @campaigns.count %></strong></h3>
+    </div>
+    <div class="products-count-border">
+      <h3>Orders</h3>
+      <h3><strong><%= @user_order_items.count %></strong></h3>
+    </div>
+    <div class="products-count-ben1">
+      <h2><%= @sales.round(2) %> €</h2>
+      <h3>Sales</h3>
+    </div>
     <% ben = 0  %>
     <% @campaigns.each do |campaign| %>
       <% ben += campaign.benefits %>
     <% end %>
-    <h2><%= ben.round(2) %> €</h2>
-    <p>Benefits</p>
-    <br>
+    <div class="products-count-ben2">
+      <h1><strong><%= ben.round(2) %></strong> €</h1>
+      <h3>Benefits</h3>
+    </div>
     <div class="btn-user-box text-center">
-      <button type="button" class="btn-dashboard" ><%= link_to "My shop", user_path(@user) %></button>
+      <button type="button" class="btn-dashboard-new-secondary" ><%= link_to "ADD A PRODUCT", new_product_path(@user) %></button>
+    </div>
+    <div class="btn-user-box text-center">
+      <button type="button" class="btn-dashboard-new-secondary" ><%= link_to "ADD A CAMPAIGN", new_campaign_path(@user) %></button>
+    </div>
+    <div class="btn-user-box text-center">
+      <button type="button" class="btn-dashboard-new" ><%= link_to "YOUR STORE", user_path(@user) %></button>
     </div>
   </div>
 

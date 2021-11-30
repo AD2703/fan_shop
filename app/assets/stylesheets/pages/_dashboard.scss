@@ -2,9 +2,130 @@
   padding: 15px;
   display: flex;
   background-color: white;
+  h1{
+    font-weight: 400;
+    font-size: 40px;
+    margin: 0px;
+    padding: 0px;
+    color: #0A0639;
+  }
   h2 {
+    font-weight: 400;
+    font-size: 33px;
+    margin: 0px;
+    padding: 0px;
+    color: #0A0639;
+  }
+  p{
+    font-weight: 200;
+    font-size: 12px;
+    margin-top: -10px;
+  }
+  h3{
     margin: 0;
     padding: 0;
+    font-weight: 300;
+    font-size: 23px;
+    margin: 0px;
+    padding: 0px;
+    color: #0A0639;
+    strong{
+      font-weight: 800;
+    }
+  }
+}
+
+.products-count{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.products-count-border{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  border-style: solid;
+  border-color: #0000000c;
+  border-radius: 16px;
+  border-width: 2px;
+}
+
+.products-count-ben2{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  align-items: baseline;
+}
+
+.products-count-ben1{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 15px;
+  align-items: baseline;
+}
+
+.btn-dashboard-new{
+  background: #0A0639;
+  color: white;
+  padding: 8px;
+  border-radius: 2px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  a{
+    color: white
+  }
+}
+
+.btn-dashboard-new:hover{
+  background: #0A0639;
+  color: white;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  a{
+    color: white
+  }
+}
+
+.btn-dashboard-new-secondary{
+  background: white;
+  color: #0A0639;
+  padding: 8px;
+  border-radius: 2px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 10px;
+  width: 100%;
+  border-color: #0A0639;
+  a{
+    color: #0A0639;
+  }
+}
+
+.btn-dashboard-new:hover{
+  background: #0A0639;
+  color: white;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  a{
+    color: white
   }
 }
 
@@ -14,13 +135,14 @@
   padding-bottom: 80px;
   padding: 30px;
   width: 30%;
-  background-color: white;
+  background-color: #F6F6F6;
   border-style: solid;
-  border-radius: 0%;
+  border-color: #0000000c;
+  border-radius: 16px;
   border-width: 2px;
   height: fit-content;
   height: 85vh;
-  filter: drop-shadow(0px -2px 9px #8c8c8c24);
+  filter: drop-shadow(0px -2px 9px #0000003b);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
