@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Fan Shop"
+meta_title: "FAN SHOP - REAL DESIGNS BY REAL ARTISTS"
+meta_description: "Pre-order the freshest new T-shirt designs from your local creators across design, music and beyond"
+meta_image: "LogoMakr-3S0Tmi_zzicae.png" # should exist in `app/assets/images/`
+twitter_account: "@fanshop_twitter_account"   # required for Twitter Cards
