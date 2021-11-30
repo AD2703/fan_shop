@@ -39,9 +39,9 @@
 
   <div class="dash">
     <div class="title-box">
-      <h1>My Products:</h1>
-      <div class="btn-user-box">
-        <button type="button" class="btn-dashboard" ><%= link_to "All", products_path %></button>
+      <h1>My Products</h1>
+      <div class="btn-user-box side">
+        <button type="button" class="btn-dashboard-new-secondary" ><%= link_to "ALL PRODUCTS", products_path %></button>
       </div>
     </div>
     <div class="products">
@@ -63,9 +63,21 @@
       <% end %>
     </div>
     <br>
-    <h1>My Campaigns:</h1>
+    <div class="title-box">
+      <h1>My Campaigns</h1>
+      <div class="btn-user-box sidex">
+        <button type="button" class="btn-dashboard-new-secondary"><a href="#active">ACTIVE</a></button>
+      </div>
+      <div class="btn-user-box sidex">
+        <button type="button" class="btn-dashboard-new-secondary"><a  href="#inactive">INACTIVE</a></button>
+      </div>
+      <div class="btn-user-box sidex">
+        <button type="button" class="btn-dashboard-new-secondary"><a  href="#finished">FINISHED</a></button>
+      </div>
+    </div>
     <br>
-    <h2>Active:</h2>
+
+    <h2 id="active">Active:</h2>
     <div class="campaigns">
       <% @activecamp.each do |campaign| %>
       <% sales = 0 %>
@@ -74,7 +86,7 @@
       <% end %>
         <div class="campaign">
           <div class="campaign-top">
-            <h4><%= campaign.name.upcase %></h4>
+            <h2><%= campaign.name %></h2>
             <p><strong><%= campaign.duration_days %> </strong>days left</p>
           </div>
           <div class="campaign-bottom">
@@ -88,12 +100,16 @@
               <% end %>
             </div>
             <div class="campaign-info">
-              <h4><%= campaign.order_items.where(status: "paid").count %></h4>
-              <p>orders</p>
-              <h4><%= sales.round(2) %> €</h4>
-              <p>sales</p>
-              <div class="btn-user-box">
-                <button type="button" class="btn-dashboard" ><%= link_to "See more", campaign_path(campaign) %></button>
+              <div class="products-count">
+                <h3>Orders</h3>
+                <h3><strong><%= campaign.order_items.where(status: "paid").count %></strong></h3>
+              </div>
+              <div class="products-count">
+                <h3>Sales</h3>
+                <h3><strong><%= sales.round(2) %></strong> €</h3>
+              </div>
+              <div class="btn-user-box" >
+                <button type="button" class="btn-dashboard-new" ><%= link_to "SEE MORE", campaign_path(campaign) %></button>
               </div>
             </div>
           </div>
@@ -101,13 +117,13 @@
       <% end %>
     </div>
     <br>
-    <h2>Inactive:</h2>
+    <h2 id="inactive">Inactive:</h2>
     <div class="campaigns">
       <% @inactivecamp.each do |campaign| %>
 
         <div class="campaign">
           <div class="campaign-top">
-            <h4><%= campaign.name.upcase %></h4>
+            <h2><%= campaign.name %></h2>
             <p>Duration: <strong><%= campaign.duration_days %> </strong>days</p>
           </div>
           <div class="campaign-bottom">
@@ -122,7 +138,7 @@
             </div>
             <div class="campaign-info">
               <div class="btn-user-box">
-                <button type="button" class="btn-dashboard" ><%= link_to "See more", campaign_path(campaign) %></button>
+                <button type="button" class="btn-dashboard-new" ><%= link_to "SEE MORE", campaign_path(campaign) %></button>
               </div>
             </div>
           </div>
@@ -130,7 +146,7 @@
       <% end %>
     </div>
     <br>
-    <h2>Finished:</h2>
+    <h2 id="finished">Finished:</h2>
     <div class="campaigns">
       <% @finishedcamp.each do |campaign| %>
       <% sales = 0 %>
@@ -139,7 +155,7 @@
       <% end %>
         <div class="campaign">
           <div class="campaign-top">
-            <h4><%= campaign.name.upcase %></h4>
+            <h2><%= campaign.name %></h2>
           </div>
           <div class="campaign-bottom">
             <div class="campaign-images">
@@ -152,14 +168,20 @@
               <% end %>
             </div>
             <div class="campaign-info">
-              <h4><%= campaign.order_items.where(status: "paid").count %></h4>
-              <p>orders</p>
-              <h4><%= sales.round(2) %> €</h4>
-              <p>sales</p>
-              <h4><%= campaign.benefits.round(2) %> €</h4>
-              <p>benefits</p>
+              <div class="products-count">
+                <h3>Orders</h3>
+                <h3><strong><%= campaign.order_items.where(status: "paid").count %></strong></h3>
+              </div>
+              <div class="products-count">
+                <h3>Sales</h3>
+                <h3><strong><%= sales.round(2) %></strong> €</h3>
+              </div>
+              <div class="products-count">
+                <h3>Benefits</h3>
+                <h3><strong><%= campaign.benefits.round(2) %></strong> €</h3>
+              </div>
               <div class="btn-user-box">
-                <button type="button" class="btn-dashboard" ><%= link_to "See more", campaign_path(campaign) %></button>
+                <button type="button" class="btn-dashboard-new" ><%= link_to "SEE MORE", campaign_path(campaign) %></button>
               </div>
             </div>
           </div>

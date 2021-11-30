@@ -5,7 +5,6 @@ class CampaignProductsController < ApplicationController
     @campaign = Campaign.find(params[:campaign_id])
     @campaign_product.product = @product
     @campaign_product.campaign = @campaign
-    @campaign.publish = true
     @campaign_product.save
     redirect_to campaign_path(@campaign)
   end
