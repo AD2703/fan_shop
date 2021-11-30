@@ -1,4 +1,9 @@
 class OrdersController < ApplicationController
+
+  def index
+    @orders = Order.all.where(status: "paid", user: current_user)
+  end
+
   def create
     @order = Order.create(user: current_user)
   end
