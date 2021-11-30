@@ -90,32 +90,15 @@ padding-left: 0px;
   justify-content: space-evenly;
 }
 
-.row h3 {
-  padding-top: 20px;
-  padding-left: 160px;
-  font-size: 29px;
-  margin-bottom: 16px;
-  margin-top: 10px;
+.card-body-title {
+  text-align: center;
+  margin: 20px;
+  font-size: 32px;
 }
 
-.row h4 {
-  padding-top: 20px;
-  padding-left: 162px;
-  font-size: 29px;
-  margin-bottom: 16px;
-  margin-top: 10px;
-}
-
-.row h6 {
-  padding-left: 130px;
-  font-size: 21px;
-  padding-bottom: 50px;
-}
-
-.row h5 {
-  font-size: 21px;
-  padding-left: 80px;
-  padding-bottom: 50px;
+.card-body-text {
+  margin: 20px;
+  font-size: 22px;
 }
 
 .row-home {
@@ -132,13 +115,13 @@ padding-left: 0px;
 
 .become-selller {
   text-align: center;
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-top: 55px;
 }
 
 .card-text-become {
-padding-top: 25px;
-padding-bottom: 10px;
+padding-top: 35px;
+padding-bottom: 20px;
 font-size: 20px;
 }
 
@@ -152,3 +135,5 @@ font-size: 20px;
 .text-home {
   padding-left: 50px;
 }
+
+
