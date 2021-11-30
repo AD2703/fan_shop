@@ -34,10 +34,33 @@ $color-white: #FFF;
   display: flex;
   margin-bottom: -10px;
   height: 100vh;
+  th{
+    background-color: white;
+    color: black;
+    font-weight: 700;
+  }
 }
 
 .form-img{
   background-image: url(https://res.cloudinary.com/dxlitvtog/image/upload/v1638263648/austin-neill-hgO1wFPXl3I-unsplash_jxcrne.jpg);
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  margin-top: -80px;
+}
+
+.form-img1{
+  background-image: url(https://res.cloudinary.com/dxlitvtog/image/upload/v1638281557/justin-buisson-JU5_bUxr5Rg-unsplash_tidrrz.jpg);
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  margin-top: -80px;
+}
+
+.form-img2{
+  background-image: url(https://res.cloudinary.com/dxlitvtog/image/upload/v1638281557/brandon-webb-GNPCqlUex8U-unsplash_dyqk1e.jpg);
   width: 50%;
   background-position: center;
   background-size: cover;
@@ -83,6 +106,16 @@ $color-white: #FFF;
   display: flex;
   justify-content: space-between;
 }
+
+.form-names1{
+  display: flex;
+  justify-content: stretch;
+  p{
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+}
+
 
 .form-name1{
   width: 49%;

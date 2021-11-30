@@ -1,51 +1,65 @@
 <div class="form">
-<h2>Edit your profile <%= resource_name.to_s.humanize %></h2>
+  <div class= "form-container">
+    <h2>Edit your profile <%= resource_name.to_s.humanize %></h2>
+    <div class="form-inputs">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <div class="form-names">
+            <div class="form-name1">
+              <%= f.input :name,
+                        required: true, placeholder: "Name", label: false %>
+            </div>
+            <div class="form-name2">
+              <%= f.input :nickname, placeholder: "Nickname", label: false  %>
+            </div>
+          </div>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }, placeholder: "Email", label: false %>
+          <%= f.input :address, required: false, autofocus: true, placeholder: "Address", label: false  %>
+          <%= f.input :description, placeholder: "Add Your Biography", label: false,:input_html => {:rows => 5}  %>
+          <div class="form-names">
+            <div class="form-name1">
+              <%= f.check_box :seller,
+                          required: true %>
+              <%= f.label "Become A Seller" %>
+            </div>
+            <div class="form-name20">
+              <label class="btn-singup-photo">
+                Upload new image
+                <span style="display:none;">
+                  <%= f.file_field :photo%>
+                </span>
+              </label>
+            </div>
+          </div>
+          <hr>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+          <%= f.input :password,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      input_html: { autocomplete: "new-password" }, placeholder: "Password", label: false  %>
+          <%= f.input :password_confirmation,
+                      required: false,
+                      input_html: { autocomplete: "new-password" },  placeholder: "New Password", label: false  %>
+          <%= f.input :current_password,
+                      hint: "we need your current password to confirm your changes",
+                      required: true,
+                      input_html: { autocomplete: "current-password" },  placeholder: "Current Password", label: false  %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "REGISTER", class: "btn-singup-form" %>
+        </div>
+      <% end %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <%= f.input :name, required: false, autofocus: true %>
-    <%= f.input :nickname, required: false, autofocus: true %>
-    <%= f.input :address, required: false, autofocus: true %>
-    <%= f.input :description, required: false, autofocus: true %>
-    <%= f.input :seller, as: :boolean, checked_value: true, unchecked_value: false %>
-    <br>
-    <%= f.label "Profile Photo" %>
-    <br>
-    <%= f.file_field :photo %>
-
-
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update", class: "btn-dashboard" %>
+  <div class="form-img">
   </div>
-<% end %>
-
-<hr>
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-dashboard"%></p>
-
-<%= link_to "Back", :back %>
-
 </div>
