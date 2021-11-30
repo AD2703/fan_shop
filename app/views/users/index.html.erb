@@ -4,9 +4,12 @@
         <% if user.photo.attached? %>
             <%= link_to user_path(user), class: 'img-box' do %>
               <%= cl_image_tag user.photo.key, class: 'img-user' %>
+              <div class="middle">
+                <div class="text"><h4><%= user.name %></h4></div>
+              </div>
             <% end %>
         <% else %>
-          <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrheqyGFt5E7EEPUc3L2lcIrb9Xb_Vw624Q&usqp=CAU")%>
+          <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrheqyGFt5E7EEPUc3L2lcIrb9Xb_Vw624Q&usqp=CAU", class: 'img-user')%>
         <% end %>
       <% end %>
   </div>
