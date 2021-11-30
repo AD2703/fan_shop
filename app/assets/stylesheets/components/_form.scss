@@ -29,9 +29,115 @@ $color-white: #FFF;
 // }
 
 .form {
-  margin: 200px;
+  margin: 0;
   background-color: white;
-  margin-top: 20px;
-  padding: 40px;
+  display: flex;
+  margin-bottom: -10px;
+  height: 100vh;
+}
 
+.form-img{
+  background-image: url(https://res.cloudinary.com/dxlitvtog/image/upload/v1638263648/austin-neill-hgO1wFPXl3I-unsplash_jxcrne.jpg);
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  margin-top: -80px;
+}
+
+.form-container{
+  width: 50%;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  h2{
+    font-weight: 400;
+    font-size: 40px;
+    margin: 0px;
+    padding: 0px;
+    color: #0A0639;
+  }
+  h3{
+    font-weight: 300;
+    font-size: 30px;
+    margin: 0px;
+    padding: 0px;
+    color: #0A0639;
+  }
+}
+
+.form-inputs{
+  padding-top: 10px;
+  h3{
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding: 0px;
+    color: #0A0639;
+  }
+}
+
+.form-names{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-name1{
+  width: 49%;
+}
+
+.form-name2{
+  width: 49%;
+}
+
+.form-name20{
+  width: 49%;
+  display: flex;
+  justify-content: end;
+}
+
+.btn-singup-form{
+  background: #0A0639;
+  color: white;
+  padding: 9px 100px;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  margin-top: 20px;
+  a{
+    color: white
+  }
+}
+
+.btn-singup-form:hover{
+  background: #0A0639;
+  color: white;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  a{
+    color: white
+  }
+}
+
+.btn-singup-photo{
+  background: #F5F5F5;
+  color: #6B6666;
+  padding: 9px 50px;
+  border-radius: 4px;
+  border: solid;
+  border-width: 1px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  font-weight: 200;
+  a{
+    color: #6B6666;
+  }
+}
+
+.btn-singup-photo:hover{
+  font-weight: 400;
 }

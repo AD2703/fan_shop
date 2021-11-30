@@ -100,24 +100,55 @@ padding-left: 0px;
 
 .row h4 {
   padding-top: 20px;
-  padding-left: 160px;
+  padding-left: 162px;
   font-size: 29px;
   margin-bottom: 16px;
   margin-top: 10px;
 }
 
 .row h6 {
-  padding-left: 102px;
+  padding-left: 130px;
   font-size: 21px;
   padding-bottom: 50px;
 }
 
 .row h5 {
   font-size: 21px;
-  padding-left: 50px;
+  padding-left: 80px;
   padding-bottom: 50px;
 }
 
 .row-home {
   justify-content: space-evenly;
+}
+
+.card-become {
+  justify-content: center;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.become-selller {
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.card-text-become {
+padding-top: 25px;
+padding-bottom: 10px;
+font-size: 20px;
+}
+
+.card-body-become {
+  background-color: white;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.text-home {
+  padding-left: 50px;
 }

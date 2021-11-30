@@ -4,14 +4,14 @@
 </div>
 
 <h2 class="about-us">Our Team</h2>
-<div class="row">
+<div class="row-about">
     <div class="card-about">
     <h2 class="about">Carles Espuña</h2>
     <img class="img-about" src="https://res.cloudinary.com/dxlitvtog/image/upload/v1637767506/PHOTO-2021-11-24-16-20-03_ccbap2.jpg">
       <div class="container-about">
         <p class="title-about">CEO & Founder</p>
         <p>Carles@gmail.com</p>
-        <p><button class="btn-dashboard">Contact</button></p>
+        <%= link_to "Contact", new_user_registration_path, class: "btn-dashboard" %>
       </div>
   </div>
 
@@ -21,17 +21,18 @@
       <div class="container-about">
         <p class="title-about">CO Founder & Progammer</p>
         <p>Alejandro@gmail.com</p>
-        <p><button class="btn-dashboard">Contact</button></p>
+        <%= link_to "Contact", new_user_registration_path, class: "btn-dashboard" %>
       </div>
     </div>
-
+</div>
+<div class="row-about">
     <div class="card-about">
     <h2 class="about">Filippo Mancini</h2>
     <img class="img-about" src="https://res.cloudinary.com/dxlitvtog/image/upload/v1637769834/Photo_on_24-11-21_at_17.03_2_zjhtcx.jpg">
       <div class="container-about">
         <p class="title-about">Chief Designer</p>
         <p>Filippo@gmail.com</p>
-        <p><button class="btn-dashboard">Contact</button></p>
+        <%= link_to "Contact", new_user_registration_path, class: "btn-dashboard" %>
       </div>
     </div>
 
@@ -41,7 +42,7 @@
       <div class="container-about">
         <p class="title-about">Developer & Designer</p>
         <p>Max@gmail.com</p>
-        <p><button class="btn-dashboard">Contact</button></p>
+        <%= link_to "Contact", new_user_registration_path, class: "btn-dashboard" %>
       </div>
   </div>
 </div>

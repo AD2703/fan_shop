@@ -20,6 +20,25 @@ user3.photo.attach(io: File.open(photo_user3), filename: 'nes.png', content_type
 user4 = User.create(email: 'alejandro@gmail.com', password: '123456', name: 'Alejandro',seller: false, nickname: 'alejandrini', description: 'Shit music is my life', address: 'Mexico')
 photo_user4 = URI.open('https://i.pinimg.com/564x/be/d0/77/bed077aaca3aaab4b167245fec3c322b.jpg')
 user4.photo.attach(io: File.open(photo_user4), filename: 'nes.jpg', content_type: 'image/jpg')
+user5 = User.create(email: 'kay@gmail.com', password: '123456', name: 'Kaydy Kain', seller: true, nickname: 'kkain', description: 'Trap music is my life', address: 'Italy')
+photo_user5 = URI.open('https://cdns-images.dzcdn.net/images/artist/31c3120c65fd5e2c12ce917e998f53a7/500x500.jpg')
+user5.photo.attach(io: File.open(photo_user5), filename: 'nes.jpg', content_type: 'image/jpg')
+user6 = User.create(email: 'durk@gmail.com', password: '123456', name: 'Lil Durk', seller: true, nickname: 'lilD', description: 'Techno music is my life', address: 'Girona')
+photo_user6 = URI.open('https://i1.sndcdn.com/artworks-OQyJE6AFdiT1dViT-tszZLA-t500x500.jpg')
+user6.photo.attach(io: File.open(photo_user6), filename: 'nes.jpg', content_type: 'image/jpg')
+user7 = User.create(email: 'tony@gmail.com', password: '123456', name: 'Tony Effe',seller: true, nickname: 'Effe', description: 'Trap music is my life', address: 'Italy')
+photo_user7 = URI.open('https://www.ansa.it/webimages/img_457x/2021/6/11/e6c5a151ebb5c62b55842f88f6dbbd87.jpg')
+user7.photo.attach(io: File.open(photo_user7), filename: 'nes.jpg', content_type: 'image/jpg')
+user8 = User.create(email: 'cent@gmail.com', password: '123456', name: '50 cent',seller: true, nickname: '50', description: 'Techno music is my life', address: 'Girona')
+photo_user8 = URI.open('https://i2.wp.com/historia-biografia.com/wp-content/uploads/2017/07/50cent41.jpg?fit=600%2C400&ssl=1')
+user8.photo.attach(io: File.open(photo_user8), filename: 'nes.jpg', content_type: 'image/jpg')
+user9 = User.create(email: 'ceciliog@gmail.com', password: '123456', name: 'Cecilo G',seller: true, nickname: 'cecig', description: 'Trap music is my life', address: 'Italy')
+photo_user9 = URI.open('https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2019/07/13/15630420128564.jpg')
+user9.photo.attach(io: File.open(photo_user9), filename: 'nes.jpg', content_type: 'image/jpg')
+user10 = User.create(email: 'rels@gmail.com', password: '123456', name: 'Rels B',seller: true, nickname: 'Skinny flak', description: 'Techno music is my life', address: 'Girona')
+photo_user10 = URI.open('https://yt3.ggpht.com/ytc/AKedOLROKOPedV_VvjRiE2upVYC1VGzxUNaGApOZegexjA=s900-c-k-c0x00ffffff-no-rj')
+user10.photo.attach(io: File.open(photo_user10), filename: 'nes.jpg', content_type: 'image/jpg')
+
 
 puts "Users created"
 
