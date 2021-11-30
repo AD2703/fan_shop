@@ -7,6 +7,9 @@
     <div class="order-items">
     <% @orders.last.order_items.each do |order_item| %>
       <div class="order-item">
+        <div class="order-item-img">
+          <%= cl_image_tag order_item.product.photo.key %>
+        </div>
         <div class="order-item-info">
             <h4><%= order_item.product.name %></h4>
             <p>- Quantity = <%= order_item.quantity %></p>
