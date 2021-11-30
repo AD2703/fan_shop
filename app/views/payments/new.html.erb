@@ -1,9 +1,19 @@
 <div class="container">
   <div class="row py-4">
-    <div class="col-md-3">REMEMBER TO ITERATE OVER YOUR ORDER ITEMS/ PHOTOS</div>
+    <div class="col-md-3"></div>
     <div class="col">
       <h1>Checkout summary</h1>
-
+          <% @order.order_items.each do |ord_item|%>
+           <div>
+        <div>
+            <h4><%= ord_item.product.name %></h4>
+             <p>- Quantity = <%= ord_item.quantity %></p>
+            <p>- Price = </h3><%= ord_item.product.price %></p>
+            <p>- Size = </h3><%= ord_item.size %></p>
+            <%= cl_image_tag ord_item.product.photo.key, class: "card-dash-img" %>
+         </div>
+      </div>
+    <% end %>
 
       <button id="pay" class="btn btn-primary">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>

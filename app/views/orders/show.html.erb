@@ -7,7 +7,19 @@
         <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
         </li>
       </ul>
-      <p>Estimated delivery in <strong>2 business days</strong></p>
+      <p>Estimated delivery of the following items in <strong>2 Filippo's business days</strong></p>
     </div>
+
+     <% @order.order_items.each do |ord_item|%>
+           <div>
+        <div>
+            <h4><%= ord_item.product.name %></h4>
+             <p>- Quantity = <%= ord_item.quantity %></p>
+            <p>- Price = </h3><%= ord_item.product.price %></p>
+            <p>- Size = </h3><%= ord_item.size %></p>
+            <%= cl_image_tag ord_item.product.photo.key, class: "card-dash-img" %>
+         </div>
+      </div>
+    <% end %>
   </div>
 </div>
