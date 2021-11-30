@@ -1,5 +1,5 @@
-<h1 class="artists-title" style="text-align:center">ARTISTS IN STORE</h1>
-  <div class="row img-artists" style="height: 70vh;overflow: hidden;">
+<h1 class="artists-title" style="text-align:center">Shop From Your Favorite Artist</h1>
+  <div class="row img-artists">
       <% @users.each do |user| %>
         <% if user.photo.attached? %>
             <%= link_to user_path(user), class: 'img-box' do %>
