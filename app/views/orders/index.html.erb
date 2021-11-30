@@ -1,0 +1,23 @@
+<h1>My Orders</h1>
+
+<div class="grid-container">
+  <% @orders.each do |order| %>
+
+   <div class="grid-item">
+      <h4>  Order #:<%=  order.id %></h4>
+    </div>
+    <div class="grid-item">
+     <p>  Creation Date: <%=  order.created_at.to_date %></p>
+     </div>
+     <div class="grid-item">
+     <p>  Estimated Delivery: <%=  order.created_at.to_date + 2 %></p>
+     </div>
+     <div class="grid-item">
+      <p>Order Total Price: <%=  order.total_price %> €</p>
+    </div>
+    <div class="btn-user-box">
+      <button type="button" class="btn-dashboard" ><%= link_to "See details", order_path(order.id) %></button>
+    </div>
+    <hr>
+  <% end %>
+</div>
