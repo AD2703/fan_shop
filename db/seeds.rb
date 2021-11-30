@@ -9,10 +9,10 @@ User.delete_all
 puts "DB clean"
 
 user1 = User.create(email: 'filipo@gmail.com', password: '123456', name: 'Filipo',seller: true, nickname: 'pipo', description: 'Trap music is my life', address: 'Italy')
-photo_user1 = URI.open('https://i.pinimg.com/originals/19/63/da/1963daa666a8030047e2a9f13beb6975.jpg')
+photo_user1 = URI.open('https://c4.wallpaperflare.com/wallpaper/471/80/993/eminem-high-resolution-widescreen-wallpaper-preview.jpg')
 user1.photo.attach(io: File.open(photo_user1), filename: 'nes.jpg', content_type: 'image/jpg')
 user2 = User.create(email: 'carles@gmail.com', password: '123456', name: 'Carles',seller: true, nickname: 'carls', description: 'Techno music is my life', address: 'Girona')
-photo_user2 = URI.open('https://mejorespeliculas.top/wp-content/uploads/2020/06/Dise%C3%B1o-sin-t%C3%ADtulo-2020-06-24T155502.517-min.jpg')
+photo_user2 = URI.open('https://wallpapercave.com/wp/wp1835627.jpg')
 user2.photo.attach(io: File.open(photo_user2), filename: 'nes.jpg', content_type: 'image/jpg')
 user3 = User.create(email: 'max@gmail.com', password: '123456', name: 'Max',seller: false, nickname: 'maxim', description: 'Rock music is my life', address: 'Belgium')
 photo_user3 = URI.open('https://i.pinimg.com/originals/2c/0c/e8/2c0ce826414c964703e12c1ad8e1bd96.png')
