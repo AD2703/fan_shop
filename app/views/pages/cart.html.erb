@@ -1,45 +1,47 @@
 <% suma = 0 %>
 <div class="small-container cart-page">
-  <table>
-    <tr>
-      <th>Product</th>
-      <th>Quantity</th>
-      <th>Subtotal</th>
-    </tr>
-      <% @orders.last.order_items.each do |order_item| %>
-    <tr>
-        <td>
-          <div class="cart-info">
-            <%= cl_image_tag order_item.product.photo.key %>
-            <div>
-              <p><%= order_item.product.name %></p>
-              <small><%= order_item.product.price %> €</small>
-            </div>
-          </div>
-        </td>
-        <td class="quantity"><%= order_item.quantity %></td>
-        <td><%= order_item.value %> €</td>
-        <% suma += order_item.value %>
-    </tr>
-      <% end %>
-  </table>
-
-  <div class="total-price">
+  <%if @orders.last.order_items.exists?%>
     <table>
       <tr>
-        <td><strong>TOTAL:</strong></td>
-        <td class="sum-prices"><%= suma.round(2) %> € </td>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
       </tr>
+        <% @orders.last.order_items.each do |order_item| %>
       <tr>
-      <td></td>
-        <td>
-          <%if @orders.last.order_items.exists?%>
+          <td>
+            <div class="cart-info">
+              <%= cl_image_tag order_item.product.photo.key %>
+              <div>
+                <p><%= order_item.product.name %></p>
+                <small>Price: <%= order_item.product.price %> €</small>
+              </div>
+            </div>
+          </td>
+          <td class="quantity"><%= order_item.quantity %></td>
+          <td><%= order_item.value %> €</td>
+          <% suma += order_item.value %>
+      </tr>
+        <% end %>
+    </table>
+
+    <div class="total-price">
+      <table>
+        <tr>
+          <td><strong>TOTAL:</strong></td>
+          <td class="sum-prices"><%= suma.round(2) %> € </td>
+        </tr>
+        <tr>
+        <td></td>
+          <td>
             <div class="btn-user-box text-center">
               <button type="button" class="btn-dashboard" ><%= link_to "Checkout", pay_order_path(@orders.last), method: :patch, class: ""  %></button>
             </div>
-          <% end %>
-        </td>
-      </tr>
-    </table>
-  </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  <% else %>
+  <h1>Your Cart is Empty</h1>
+  <% end %>
 </div>
