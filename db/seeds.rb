@@ -42,54 +42,54 @@ user10.photo.attach(io: File.open(photo_user10), filename: 'nes.jpg', content_ty
 
 puts "Users created"
 
-campaign1 = Campaign.create(user: user1, name:'first campaign', duration_days: 15, state: "active")
-campaign2 = Campaign.create(user: user1, name:'second campaign', duration_days: 20, state: "active")
-campaign3 = Campaign.create(user: user2, name:'third campaign', duration_days: 10, state: "active")
-campaign4 = Campaign.create(user: user2, name:'forth campaign', duration_days: 25, state: "active")
-campaign5 = Campaign.create(user: user1, name:'campaign5', duration_days: 15, state: "inactive")
-campaign6 = Campaign.create(user: user1, name:'campaign6', duration_days: 20, state: "inactive")
-campaign7 = Campaign.create(user: user2, name:'campaign7', duration_days: 10, state: "inactive")
-campaign8 = Campaign.create(user: user2, name:'campaign8', duration_days: 25, state: "inactive")
+campaign1 = Campaign.create(user: user1, name:'Summer Vibe', duration_days: 15, state: "active")
+campaign2 = Campaign.create(user: user1, name:'Long-sleeve Drop', duration_days: 20, state: "active")
+campaign3 = Campaign.create(user: user2, name:'Classic Tee', duration_days: 10, state: "active")
+campaign4 = Campaign.create(user: user2, name:'Winter Vibe', duration_days: 25, state: "active")
+campaign5 = Campaign.create(user: user1, name:'New Year Merch', duration_days: 15, state: "inactive")
+campaign6 = Campaign.create(user: user1, name:'2022 Tour Merch', duration_days: 20, state: "inactive")
+campaign7 = Campaign.create(user: user2, name:'Album Merch Drop', duration_days: 10, state: "inactive")
+campaign8 = Campaign.create(user: user2, name:'Artists Favourites Resale', duration_days: 25, state: "inactive")
 
 puts "Campaigns created"
 
-product1 = Product.create(user: user1, name:'t-shirt1', price: 25, garment: 't-shirt', color:'white', publish: true)
+product1 = Product.create(user: user1, name:'White tee', price: 25, garment: 't-shirt', color:'white', publish: true)
 photo1 = URI.open('https://everpress.imgix.net/img/campaign/original/619cb705730bd7.14423200.png')
 product1.photo.attach(io: File.open(photo1), filename: 'nes.png', content_type: 'image/png')
 
-product2 = Product.create(user: user1, name:'t-shirt2', price: 30, garment: 't-shirt', color:'grey', publish: true)
+product2 = Product.create(user: user1, name:'Grey tee', price: 30, garment: 't-shirt', color:'grey', publish: true)
 photo2 = URI.open('https://everpress.imgix.net/img/campaign/original/619c4c44e79554.35840533.png')
 product2.photo.attach(io: File.open(photo2), filename: 'nes.png', content_type: 'image/png')
 
-product3 = Product.create(user: user1, name:'hoodie1', price: 35, garment: 'hoodie', color:'black', publish: true)
+product3 = Product.create(user: user1, name:'Black hoodie', price: 35, garment: 'hoodie', color:'black', publish: true)
 photo3 = URI.open('https://everpress.imgix.net/img/campaign/original/6193f7663c0db8.34585728.png')
 product3.photo.attach(io: File.open(photo3), filename: 'nes.png', content_type: 'image/png')
 
-product4 = Product.create(user: user1, name:'hoodie2', price: 40, garment: 'hoodie', color:'grey', publish: true)
+product4 = Product.create(user: user1, name:'Grey hoodiee', price: 40, garment: 'hoodie', color:'grey', publish: true)
 photo4 = URI.open('https://everpress.imgix.net/img/campaign/original/6197b4fc1266a3.42972041.png')
 product4.photo.attach(io: File.open(photo4), filename: 'nes.png', content_type: 'image/png')
 
-product5 = Product.create(user: user1, name:'long-sleeve1', price: 28, garment: 'long-sleeve', color:'grey', publish: true)
+product5 = Product.create(user: user1, name:'Grey long-sleeve', price: 28, garment: 'long-sleeve', color:'grey', publish: true)
 photo5 = URI.open('https://everpress.imgix.net/img/campaign/original/619c3d3bf17461.11520242.png')
 product5.photo.attach(io: File.open(photo5), filename: 'nes.png', content_type: 'image/png')
 
-product6 = Product.create(user: user2, name:'t-shirt3', price: 21, garment: 't-shirt', color:'white', publish: true)
+product6 = Product.create(user: user2, name:'White tee', price: 21, garment: 't-shirt', color:'white', publish: true)
 photo6 = URI.open('https://everpress.imgix.net/img/campaign/original/619bc3694e6e18.59902968.png')
 product6.photo.attach(io: File.open(photo6), filename: 'nes.png', content_type: 'image/png')
 
-product7 = Product.create(user: user2, name:'t-shirt4', price: 19, garment: 't-shirt', color:'grey', publish: true)
+product7 = Product.create(user: user2, name:'Grey tee', price: 19, garment: 't-shirt', color:'grey', publish: true)
 photo7 = URI.open('https://everpress.imgix.net/img/campaign/original/619c3d2919b0d0.64795800.png')
 product7.photo.attach(io: File.open(photo7), filename: 'nes.png', content_type: 'image/png')
 
-product8 = Product.create(user: user2, name:'hoodie3', price: 32, garment: 'hoodie', color:'pink', publish: true)
+product8 = Product.create(user: user2, name:'Pink hoodie', price: 32, garment: 'hoodie', color:'pink', publish: true)
 photo8 = URI.open('https://everpress.imgix.net/img/campaign/original/619aec88c75638.68713612.png')
 product8.photo.attach(io: File.open(photo8), filename: 'nes.png', content_type: 'image/png')
 
-product9 = Product.create(user: user2, name:'hoodie4', price: 38, garment: 'hoodie', color:'grey', publish: true)
+product9 = Product.create(user: user2, name:'Grey hoodiee', price: 38, garment: 'hoodie', color:'grey', publish: true)
 photo9 = URI.open('https://everpress.imgix.net/img/campaign/original/619aec75eed0b3.24444860.png')
 product9.photo.attach(io: File.open(photo9), filename: 'nes.png', content_type: 'image/png')
 
-product10 = Product.create(user: user2, name:'long-sleeve2', price: 23, garment: 'long-sleeve', color:'grey', publish: true)
+product10 = Product.create(user: user2, name:'Grey long-sleeve', price: 23, garment: 'long-sleeve', color:'grey', publish: true)
 photo10 = URI.open('https://everpress.imgix.net/img/campaign/original/61803819ab95c6.87146106.png')
 product10.photo.attach(io: File.open(photo10), filename: 'nes.png', content_type: 'image/png')
 
