@@ -26,10 +26,7 @@ class PagesController < ApplicationController
   end
 
   def home
-  end
-
-  def shop
-    @user = User.find(params[:id])
+    @users = User.where(seller: true)
   end
 
   def cart
