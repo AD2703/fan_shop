@@ -24,14 +24,10 @@
             <%= link_to "About us", about_path, class: "nav-link" %>
           </li>
           </div>
-          <div class="box">
-          <li class="nav-item active">
-            <%= link_to "", cart_path, class: "nav-link fas fa-shopping-cart" %>
-          </li>
-          </div>
         </ul>
       </div>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link filippo" %>
+        <%= link_to "", cart_path, class: "nav-link fas fa-shopping-cart" %>
     <% else %>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -47,17 +43,13 @@
           </div>
           <div class="box">
           <li class="nav-item active">
-          <%= link_to "", cart_path, class: "nav-link fas fa-shopping-cart" %>
-          </li>
-          </div>
-          <div class="box">
-          <li class="nav-item active">
             <%= link_to "Become a Seller", edit_user_registration_path(current_user) , class: "nav-link" %>
           </li>
           </div>
         </ul>
       </div>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link-out" %>
+        <%= link_to "", cart_path, class: "nav-link fas fa-shopping-cart" %>
     <% end %>
   <% else %>
     <div class="collapse navbar-collapse" id="navbarNav">
