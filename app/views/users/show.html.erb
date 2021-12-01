@@ -5,32 +5,43 @@
   <div class="shop-user-info">
     <h1><%= @user.nickname %></h1>
     <p><%= @user.description %></p>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-facebook-square"></i>
+    <i class="fab fa-github-alt"></i>
   </div>
 </div>
+<br>
 <br>
 <div class="showusers">
   <% @campaigns.each do |campaign| %>
     <div class="title-box">
-      <h2><%= campaign.name.upcase %> :</h2>
-      <div class="btn-user-box">
-        <button type="button" class="btn-dashboard" ><%= link_to "See campaign", campaign_campaign_products_path(campaign) %></button>
+      <div>
+        <h1><%= campaign.name %></h1>
+        <p><strong><%= campaign.duration_days %> </strong>days left</p>
       </div>
-      <p>Duration: <strong><%= campaign.duration_days %> </strong>days</p>
+      <div class="btn-user-box side">
+        <button type="button" class="btn-dashboard-new-secondary" ><%= link_to "SEE CAMPAIGN", campaign_campaign_products_path(campaign) %></button>
+      </div>
     </div>
-    <div class="products">
-      <% campaign.products.each do |product| %>
-        <div class="product">
-          <div class="product-image">
-            <%= cl_image_tag product.photo.key, class: "card-dash-img" %>
-          </div>
-          <div class="product-info">
-            <div class="product-price-name">
-              <p><%= product.name.upcase %> </p>
-              <p><strong><%= product.price %> €</strong> </p>
+      <div class="products wrap">
+        <% campaign.campaign_products.each do |campaign_product|%>
+          <div class="product">
+            <div class="product-image">
+              <%= cl_image_tag campaign_product.product.photo.key, class: "card-dash-img" %>
+            </div>
+            <div class="product-info">
+              <div class="product-price-name">
+                <p><%= campaign_product.product.name.upcase %> </p>
+                <p><strong><%= campaign_product.product.price %> €</strong> </p>
+              </div>
+              <div class="btn-user-box">
+                <button type="button" class="btn-dashboard" ><%= link_to "More" , campaign_campaign_product_path(campaign_product.campaign, campaign_product) %></button>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+
   <% end %>
 </div>
