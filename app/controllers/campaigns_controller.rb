@@ -21,7 +21,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     @campaign.user = current_user
     @campaign.update(campaign_params)
-    redirect_to dashboard_path
+    redirect_to campaign_path(@campaign)
   end
 
   def show
