@@ -11,7 +11,7 @@
       <%= f.input :order_id, input_html: {value: @order.id, hidden: true }, label: false %>
       <%= f.input :quantity, collection: (1..100) %>
       <%= f.input :size, collection: %w[S M L]%>
-      <%= f.submit %>
+      <%= f.button :submit, "ADD TO CART", class: "btn-singup-form", style: "width:100%;"%>
     <% end %>
   </div>
 </div>
