@@ -2,11 +2,11 @@
   <div class="margin">
   <br>
   <div class="title-box">
-      <h1>- My Products:</h1>
-      <div class="btn-user-box">
-        <button type="button" class="btn-dashboard" ><%= link_to "Add product", new_product_path(@user) %></button>
+      <h1>My Products</h1>
+      <div class="btn-user-box side">
+        <button type="button" class="btn-dashboard-new-secondary" ><%= link_to "ADD PRODUCT", new_product_path(@user) %></button>
       </div>
-  </div>
+    </div>
   </div>
    <div class="products wrap">
       <% @products.each do |product| %>

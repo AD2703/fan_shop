@@ -269,7 +269,13 @@
 .title-box {
   display: flex;
   justify-content: space-between;
-
+  h1{
+    font-weight: 400;
+    font-size: 40px;
+    margin: 0px;
+    padding: 0px;
+    color: #0A0639;
+  }
 }
 
 .side{
