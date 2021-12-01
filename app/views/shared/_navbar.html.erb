@@ -26,12 +26,12 @@
           </div>
           <div class="box">
           <li class="nav-item active">
-            <%= link_to "Cart", cart_path, class: "nav-link" %>
+            <%= link_to "", cart_path, class: "nav-link fas fa-shopping-cart" %>
           </li>
           </div>
         </ul>
       </div>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link filippo" %>
     <% else %>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -47,7 +47,7 @@
           </div>
           <div class="box">
           <li class="nav-item active">
-            <%= link_to "Cart", cart_path, class: "nav-link" %>
+          <%= link_to "", cart_path, class: "nav-link fas fa-shopping-cart" %>
           </li>
           </div>
           <div class="box">
@@ -57,7 +57,7 @@
           </div>
         </ul>
       </div>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link-out" %>
     <% end %>
   <% else %>
     <div class="collapse navbar-collapse" id="navbarNav">
