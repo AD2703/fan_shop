@@ -1,12 +1,14 @@
 <h1 class="artists-title" style="text-align:center">Shop From Your Favorite Artist</h1>
   <div class="row img-artists">
       <% @users.each do |user| %>
-        <% if user.photo.attached? %>
-            <%= link_to user_path(user), class: 'img-box' do %>
-              <%= cl_image_tag user.photo.key, class: 'img-user' %>
-            <% end %>
-        <% else %>
-          <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrheqyGFt5E7EEPUc3L2lcIrb9Xb_Vw624Q&usqp=CAU", class: 'img-user')%>
+          <% if user.photo.attached? %>
+              <%= link_to user_path(user), class: 'img-box' do %>
+                <div class='img-user' style="background-image:url('<%= cl_image_path user.photo.key %>')" >
+                  <h1 class='user-name__card'><%= user.name %></h1>
+                </div>
+              <% end %>
+          <% else %>
+            <%= image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrheqyGFt5E7EEPUc3L2lcIrb9Xb_Vw624Q&usqp=CAU", class: 'img-user')%>
+          <% end %>
         <% end %>
-      <% end %>
   </div>
