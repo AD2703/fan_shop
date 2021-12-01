@@ -1,21 +1,45 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col-md-3"></div>
-    <div class="col">
-      <h1>Checkout summary</h1>
-          <% @order.order_items.each do |ord_item|%>
-           <div>
-        <div>
-            <h4><%= ord_item.product.name %></h4>
-             <p>- Quantity = <%= ord_item.quantity %></p>
-            <p>- Price = </h3><%= ord_item.product.price %></p>
-            <p>- Size = </h3><%= ord_item.size %></p>
-            <%= cl_image_tag ord_item.product.photo.key, class: "card-dash-img" %>
-         </div>
-      </div>
-    <% end %>
+<% suma = 0 %>
+<div class="small-container cart-page">
+    <table>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+        <% @order.order_items.each do |order_item| %>
+      <tr>
+          <td>
+            <div class="cart-info">
+              <%= cl_image_tag order_item.product.photo.key %>
+              <div>
+                <p><%= order_item.product.name %></p>
+                <small>Price: <%= order_item.product.price %> €</small>
+              </div>
+            </div>
+          </td>
+          <td class="quantity"><%= order_item.quantity %></td>
+          <td><%= order_item.value %> €</td>
+          <% suma += order_item.value %>
+      </tr>
+  <% end %>
+    </table>
 
-      <button id="pay" class="btn btn-primary">Pay</button>
+    <div class="total-price">
+      <table>
+        <tr>
+          <td><strong>TOTAL:</strong></td>
+          <td class="sum-prices"><%= suma.round(2) %> € </td>
+        </tr>
+        <tr>
+        <td></td>
+          <td>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+    <div >
+ <button id="pay" class="btn btn-primary" style="float: right;">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
@@ -26,6 +50,5 @@
           });
         });
       </script>
-    </div>
-  </div>
+      </div>
 </div>
