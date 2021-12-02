@@ -66,19 +66,16 @@
     <br>
     <div class="title-box">
       <h1>My Campaigns</h1>
-      <div class="btn-user-box sidex">
-        <button type="button" class="btn-dashboard-new-secondary"><a href="#active">ACTIVE</a></button>
-      </div>
-      <div class="btn-user-box sidex">
-        <button type="button" class="btn-dashboard-new-secondary"><a  href="#inactive">INACTIVE</a></button>
-      </div>
-      <div class="btn-user-box sidex">
-        <button type="button" class="btn-dashboard-new-secondary"><a  href="#finished">FINISHED</a></button>
+      <div class="tab-customize">
+        <button class="tablinks-cus btn-dashboard-new-secondary" onclick="openTab(event, 'tab-1')" id="tab-cus-active" >ACTIVE</button>
+        <button class="tablinks-cus btn-dashboard-new-secondary" onclick="openTab(event, 'tab-2')">INACTIVE</button>
+        <button class="tablinks-cus btn-dashboard-new-secondary" onclick="openTab(event, 'tab-3')">FINISHED</button>
       </div>
     </div>
+
     <br>
     <br>
-    <div class="campaigns">
+    <div id="tab-1" class="tabcontent-cus campaigns ">
       <% @activecamp.each do |campaign| %>
       <% sales = 0 %>
       <% campaign.order_items.where(status: "paid").each do |ord| %>
@@ -120,7 +117,7 @@
         </div>
       <% end %>
     </div>
-    <div class="campaigns">
+    <div id="tab-2" class="tabcontent-cus campaigns ">
       <% @inactivecamp.each do |campaign| %>
 
         <div class="campaign">
@@ -159,7 +156,7 @@
         </div>
       <% end %>
     </div>
-    <div class="campaigns">
+    <div id="tab-3" class="tabcontent-cus campaigns ">
       <% @finishedcamp.each do |campaign| %>
       <% sales = 0 %>
       <% campaign.order_items.where(status: "paid").each do |ord| %>
@@ -202,3 +199,22 @@
     </div>
   </div>
 </div>
+
+<script>
+function openTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent-cus");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks-cus");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("tab-cus-active").click();
+
+
+</script>
