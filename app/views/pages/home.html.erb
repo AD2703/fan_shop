@@ -9,11 +9,11 @@
 <h2 class="shop-by">SHOP BY ARTIST</h2>
 <br>
 <div class="cards">
-  <% @users.reverse.drop(2).reverse.each do |user| %>
+  <% @users.first(6).each do |user| %>
     <% if user.photo.attached? %>
       <%= link_to user_path(user) do %>
         <div class='img-user' style="background-image:url('<%= cl_image_path user.photo.key %>')" >
-          <p class='user-name__card'> <%= user.name %></p>
+          <h1 class='user-name__card'><%= user.name %></h1>
         </div>
       <% end %>
     <% else %>

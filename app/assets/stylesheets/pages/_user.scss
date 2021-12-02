@@ -15,6 +15,7 @@ $anim-speed: 0.3s;
 
 .img-artists:hover .middle {
   opacity: 1;
+  background-color: black;
 }
 * {
   box-sizing: inherit;
@@ -49,11 +50,16 @@ $anim-speed: 0.3s;
 }
 
 .img-user:hover {
-  background-color: white;
-  opacity: .7;
   .user-name__card{
-    display: block;
-    color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00000070;
+    margin: 0;
+    color:white;
+    border-radius: 15px;
   }
 }
 
