@@ -11,6 +11,9 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.find(params[:id])
     @order.update(status: "paid")
+    @order.order_items.each do |oi|
+      oi.update(status: "paid")
+    end
   end
 
   def pay
@@ -40,6 +43,7 @@ class OrdersController < ApplicationController
     )
 
     @order.update!(checkout_session_id: session.id)
+    @order.update!(total_price: params[:total_price])
     redirect_to new_order_payment_path(@order)
   end
 end
