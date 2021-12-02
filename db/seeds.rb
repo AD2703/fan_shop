@@ -53,11 +53,11 @@ campaign8 = Campaign.create(user: user2, name:'Artists Favourites Resale', durat
 
 puts "Campaigns created"
 
-product1 = Product.create(user: user1, name:'White tee', price: 25, garment: 't-shirt', color:'white', publish: true)
+product1 = Product.create(user: user1, name:'White tee', price: 25, garment: 'T-shirt', color:'white', publish: true)
 photo1 = URI.open('https://everpress.imgix.net/img/campaign/original/619cb705730bd7.14423200.png')
 product1.photo.attach(io: File.open(photo1), filename: 'nes.png', content_type: 'image/png')
 
-product2 = Product.create(user: user1, name:'Grey tee', price: 30, garment: 't-shirt', color:'grey', publish: true)
+product2 = Product.create(user: user1, name:'Grey tee', price: 30, garment: 'T-shirt', color:'grey', publish: true)
 photo2 = URI.open('https://everpress.imgix.net/img/campaign/original/619c4c44e79554.35840533.png')
 product2.photo.attach(io: File.open(photo2), filename: 'nes.png', content_type: 'image/png')
 
@@ -73,11 +73,11 @@ product5 = Product.create(user: user1, name:'Grey long-sleeve', price: 28, garme
 photo5 = URI.open('https://everpress.imgix.net/img/campaign/original/619c3d3bf17461.11520242.png')
 product5.photo.attach(io: File.open(photo5), filename: 'nes.png', content_type: 'image/png')
 
-product6 = Product.create(user: user2, name:'White tee', price: 21, garment: 't-shirt', color:'white', publish: true)
+product6 = Product.create(user: user2, name:'White tee', price: 21, garment: 'T-shirt', color:'white', publish: true)
 photo6 = URI.open('https://everpress.imgix.net/img/campaign/original/619bc3694e6e18.59902968.png')
 product6.photo.attach(io: File.open(photo6), filename: 'nes.png', content_type: 'image/png')
 
-product7 = Product.create(user: user2, name:'Grey tee', price: 19, garment: 't-shirt', color:'grey', publish: true)
+product7 = Product.create(user: user2, name:'Grey tee', price: 19, garment: 'T-shirt', color:'grey', publish: true)
 photo7 = URI.open('https://everpress.imgix.net/img/campaign/original/619c3d2919b0d0.64795800.png')
 product7.photo.attach(io: File.open(photo7), filename: 'nes.png', content_type: 'image/png')
 
