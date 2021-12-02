@@ -86,7 +86,7 @@
             <% productsales += order_item.value %>
             <% productquantity += order_item.quantity %>
           <% end  %>
-          <% if product.garment == "t-shirt" %>
+          <% if product.garment == "T-shirt" %>
             <% if productquantity < 11 %>
               <% productbenefits = productsales - (productquantity * 15) %>
               <% cost = 15 %>
