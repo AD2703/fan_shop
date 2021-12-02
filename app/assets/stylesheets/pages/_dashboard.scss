@@ -361,7 +361,7 @@
 }
 
 .campaign-image{
-  height: 40vh;
+  height: auto;
   overflow: hidden;
   width: 20vw;
   flex: 0 0 20vw;
@@ -371,5 +371,43 @@
 
   &.flex-item:not(:last-of-type) {
     margin-right: 10px;
+  }
+}
+
+
+.tab-customize {
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab-customize button:hover {
+   background: #0A0639;
+  color: white;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+.tab-customize button{
+  width:30%
+}
+.tab-customize button.active {
+   background: #0A0639;
+  color: white;
+  padding: 8px;
+  border-radius: 2px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 10px;
+  width: 30%;
+  border: none;
+  a{
+    color: white
   }
 }
