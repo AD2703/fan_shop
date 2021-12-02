@@ -35,7 +35,7 @@
         <td></td>
           <td>
             <div class="btn-user-box text-center check-out">
-              <button type="button" class="btn-dashboard" ><%= link_to "Checkout", pay_order_path(@orders.last), method: :patch, class: ""  %></button>
+              <button type="button" class="btn-dashboard" ><%= link_to "Checkout", pay_order_path(@orders.last, total_price: suma), method: :patch, class: ""  %></button>
             </div>
           </td>
         </tr>
