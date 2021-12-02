@@ -39,7 +39,7 @@ user10 = User.create(email: 'rels@gmail.com', password: '123456', name: 'Rels B'
 photo_user10 = URI.open('https://yt3.ggpht.com/ytc/AKedOLROKOPedV_VvjRiE2upVYC1VGzxUNaGApOZegexjA=s900-c-k-c0x00ffffff-no-rj')
 user10.photo.attach(io: File.open(photo_user10), filename: 'nes.jpg', content_type: 'image/jpg')
 user11 = User.create(email: 'xxx@gmail.com', password: '123456', name: 'XXX-Tentacion', seller: true, nickname: 'XXX', description: 'Techno music is my life', address: 'Girona')
-photo_user11 = URI.open('https://c4.wallpaperflare.com/wallpaper/687/732/848/xxxtentacion-rapper-rip-hd-wallpaper-preview.jpg')
+photo_user11 = URI.open('https://images.hdqwalls.com/download/xxxtentacion-tz-2048x2048.jpg')
 user11.photo.attach(io: File.open(photo_user11), filename: 'nes.jpg', content_type: 'image/jpg')
 
 puts "Users created"
