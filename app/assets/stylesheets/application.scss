@@ -22,7 +22,6 @@ h2 {
   font-family: 'Roboto', sans-serif;
   padding-top: 60px;
   padding-bottom: 30px;
-  padding-left: 60px;
   font-size: 30px;
 }
 
@@ -40,11 +39,15 @@ p{
 
 a{
   font-family: 'Roboto', sans-serif;
-  color: black
+  color: black;
+  text-decoration: none;
 }
 
 a:hover{
   color: black;
+  text-decoration: none;
+  opacity: 3;
+  border-radius: 15px;
 }
 
 .background-page{
